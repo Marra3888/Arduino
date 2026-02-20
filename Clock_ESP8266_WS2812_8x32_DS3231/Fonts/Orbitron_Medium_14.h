@@ -1,0 +1,9 @@
+// Created by http://oleddisplay.squix.ch/ Consider a donation
+// In case of problems make sure that you are using the font file with the correct version!
+const uint8_t Orbitron_Medium_14Bitmaps[] PROGMEM = {
+
+	// Bitmap Data:
+	0x00, // ' '
+	0xFE,0xC0, // '!'
+	0xB4, // '"'
+	0x0C,0x41,0x19,0xFF,0xBF,0xF1,0x18,0x62,0x3F,0xF7,0xFE,0x63,0x0C,0x40, // '
