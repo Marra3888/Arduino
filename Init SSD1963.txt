@@ -1,0 +1,163 @@
+/*********************************************************************
+* Overview: Image orientation (can be 0, 90, 180, 270 degrees).
+*********************************************************************/    
+#define DISP_ORIENTATION    0
+/*********************************************************************
+* Overview: Panel Data Width (R,G,B) in (6,6,6)
+*********************************************************************/
+#define DISP_DATA_WIDTH                 18
+/*********************************************************************
+* Overview: Horizontal and vertical display resolution
+*                  (from the glass datasheet).
+*********************************************************************/
+#define DISP_HOR_RESOLUTION 800
+#define DISP_VER_RESOLUTION 480
+/*********************************************************************
+* Overview: Horizontal synchronization timing in pixels
+*                  (from the glass datasheet).
+*********************************************************************/
+#define DISP_HOR_PULSE_WIDTH        1
+#define DISP_HOR_BACK_PORCH        210
+#define DISP_HOR_FRONT_PORCH        45    
+/*********************************************************************
+* Overview: Vertical synchronization timing in lines
+*                  (from the glass datasheet).
+*********************************************************************/
+#define DISP_VER_PULSE_WIDTH        1
+#define DISP_VER_BACK_PORCH        34    
+#define DISP_VER_FRONT_PORCH        10
+/*********************************************************************
+* Definition for SPI interface for SSD1963
+* Hardware dependent!
+*********************************************************************/
+#define GPIO3 3
+#define GPIO2 2
+#define GPIO1 1
+#define GPIO0 0
+#define LCD_RESET     0
+#define LCD_SPENA    0
+#define LCD_SPCLK    0
+#define LCD_SPDAT    0
+
+
+#define HT (DISP_HOR_RESOLUTION+DISP_HOR_PULSE_WIDTH+DISP_HOR_BACK_PORCH+DISP_HOR_FRONT_
+PORCH)
+#define HPS (DISP_HOR_PULSE_WIDTH+DISP_HOR_BACK_PORCH)
+
+#define VT (DISP_VER_PULSE_WIDTH+DISP_VER_BACK_PORCH+DISP_VER_FRONT_PORCH+DISP_VER_RESOL
+UTION)
+#define VSP (DISP_VER_PULSE_WIDTH+DISP_VER_BACK_PORCH)
+
+void Init_SSD1963 (void)
+{
+
+      RESET = 1;
+      CS = 1;
+      nRD = 1;
+      nWR = 1;
+
+      RESET = 0;
+      __delay_cycles(100);
+      RESET = 1;
+
+
+      Write_Command(0xE2);            // Set PLL with OSC = 10MHz (hardware)
+      CS = 0;
+      Write_Data(0x21);
+      Write_Data(0x02);                // Divider M = 2, PLL = 360/(M+1) = 120MHz
+      Write_Data(0x54);                // Validate M and N values
+      CS = 1;
+
+      Write_Command(0xe6);           //SET PCLK freq=4.94MHz; pixel clock frequency
+      CS = 0;
+      Write_Data(0x00);
+      Write_Data(0xB4);
+      Write_Data(0xE7);
+      CS = 1;
+
+
+      Write_Command(0xE0);
+      CS = 0;
+      Write_Data(0x01);    //START PLL
+      CS = 1;
+
+      __delay_cycles(1000);
+
+      Write_Command(0xe0);
+      CS = 0;
+      Write_Data(0x03);    //LOCK PLL
+      CS = 1;
+
+      Write_Command(0x01); //// Soft reset
+      __delay_cycles(100);
+
+      Write_Command(0xB0);                      //SET LCD MODE  SET TFT 18Bits MODE
+      CS = 0;
+      Write_Data(0x10);                          //SET TFT MODE & hsync+Vsync+DEN MODE
+      Write_Data(0x80);                          //SET TFT MODE & hsync+Vsync+DEN MODE
+      Write_Data((DISP_HOR_RESOLUTION-1)>>8);      //SET horizontal size=800-1 HightByte
+      Write_Data((DISP_HOR_RESOLUTION-1) & 0xFF); //SET horizontal size=800-1 LowByte
+      Write_Data((DISP_VER_RESOLUTION-1)>>8);      //SET vertical size=480-1 HightByte
+      Write_Data((DISP_VER_RESOLUTION-1) & 0xFF); //SET vertical size=480-1 LowByte
+      Write_Data(0x00);                          //SET even/odd line RGB seq.=RGB
+      CS = 1;
+
+      //Set horizontal period
+      Write_Command(0xb4);        
+      CS = 0;
+      Write_Data((HT-1)>>8);            
+      Write_Data((HT-1) & 0xFF);
+      Write_Data((HPS-1)>>8);            
+      Write_Data(HPS-1);
+      Write_Data(DISP_HOR_PULSE_WIDTH-1);    
+      Write_Data(0x00);            
+      Write_Data(0x00);
+      Write_Data(0x00);    
+      CS = 1;
+
+      //Set vertical period
+      Write_Command(0xb6);         
+      CS = 0;
+      Write_Data((VT-1)>>8);            
+      Write_Data((VT-1) & 0xFF);
+      Write_Data((VSP-1)>>8);            
+      Write_Data(VSP-1);
+      Write_Data(DISP_VER_PULSE_WIDTH-1);    
+      Write_Data(0x00);            
+      Write_Data(0x00);
+      CS = 1;
+
+      // SET R G B format
+      Write_Command(0x3a);
+      CS = 0;
+      Write_Data(0x55);
+      CS = 1;
+
+      //SET pixel data I/F format=8bit
+      Write_Command(0xF0);
+      CS = 0;
+      Write_Data(0x00);
+      CS = 1;
+
+      //0xB8 command ????
+
+
+      //---------
+      Write_Command(0x2a);        //SET column address
+      CS = 0;
+      Write_Data(0x00);            //SET start column address=0
+      Write_Data(0x00);
+      Write_Data(0x03);            //SET end column address=799
+      Write_Data(0x1f);
+      CS = 1;
+
+      Write_Command(0x2b);        //SET page address
+      CS = 0;
+      Write_Data(0x00);            //SET start page address=0
+      Write_Data(0x00);
+      Write_Data(0x01);            //SET end page address=479
+      Write_Data(0xdf);
+      CS = 1;
+
+      Write_Command(0x29);        //SET display on
+}
