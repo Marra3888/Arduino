@@ -1,0 +1,1989 @@
+<!DOCTYPE html>
+<!-- saved from url=(0039)https://cxem.net/arduino/arduino275.php -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script src="./Часы из дисплея покупателя (VFD) v2_files/shBrushCpp.js.Без названия" type="text/javascript"></script><script src="./Часы из дисплея покупателя (VFD) v2_files/shCore.js.Без названия" type="text/javascript"></script><link rel="stylesheet" href="./Часы из дисплея покупателя (VFD) v2_files/shCoreEclipse.css" type="text/css">
+<title>Часы из дисплея покупателя (VFD) v2</title>
+
+
+<meta name="Author" content="AMatroskin">
+<meta property="og:title" content="Часы из дисплея покупателя (VFD) v2">
+<meta property="og:url" content="//cxem.net/arduino/arduino275.php">
+<link rel="canonical" href="https://cxem.net/arduino/arduino275.php">
+<meta property="og:description" content="Развитие идеи сборки часов на базе распространенных VFD дисплеев.">
+<meta property="og:image" content="https://cxem.net/arduino/images/arduino275-1.jpg">
+
+<link href="./Часы из дисплея покупателя (VFD) v2_files/style.css" rel="stylesheet" type="text/css">
+<link rel="icon" href="https://cxem.net/images/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="https://cxem.net/images/favicon-64.png" sizes="64x64" type="image/png">
+
+<script type="text/javascript" src="https://an.yandex.ru/system/context.js" async=""></script><script type="text/javascript" src="https://an.yandex.ru/system/context.js" async=""></script><script type="text/javascript" async="" src="https://vk.com/js/api/openapi.js?168"></script></head>
+
+<body>
+
+<!-- Yandex.RTB -->
+<script async="" src="./Часы из дисплея покупателя (VFD) v2_files/tag.js.Без названия"></script><script async="" src="./Часы из дисплея покупателя (VFD) v2_files/analytics.js.Без названия"></script><script>window.yaContextCb=window.yaContextCb||[]</script>
+<script src="https://yandex.ru/ads/system/context.js" async=""></script>
+
+<script type="text/javascript">
+window.google_analytics_uacct = "UA-18262495-2";
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('require', 'displayfeatures');
+  ga('create', 'UA-18262495-2', 'cxem.net');
+  ga('send', 'pageview');
+  ga('send', 'event', 'articles author', 'views', 'AMatroskin');</script>
+
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://cdn.jsdelivr.net/npm/yandex-metrica-watch/tag.js", "ym");
+
+   ym(54583708, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/54583708" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+
+	
+<script>var the_draft_name = "Часы из дисплея покупателя (VFD) v2";</script><link rel="stylesheet" href="./Часы из дисплея покупателя (VFD) v2_files/main.css">
+<script src="./Часы из дисплея покупателя (VFD) v2_files/jquery.min.js.Без названия"></script>
+<script src="./Часы из дисплея покупателя (VFD) v2_files/jquery.sticky.js.Без названия"></script>
+<script src="./Часы из дисплея покупателя (VFD) v2_files/main.js.Без названия"></script>
+<meta name="viewport" content="width=device-width, maximum-scale=1.0, user-scalable=yes">
+
+
+	<script>
+		var nE = 0;
+		var nEAddButton = true;
+		var nEID = 6773;
+		
+		var neDifficult = 3;
+		var nePCB = 1;
+		
+	</script>
+	<!--
+	<script src="https://cxem.net/js/needelparts.js"></script>
+	-->
+
+
+
+<!-- Начало НЕВИДИМЫХ СЧЕТЧИКОВ -->
+<div style="position:absolute;top:-100px;left:-100px;">
+<!--LiveInternet counter--><script type="text/javascript"><!--
+new Image().src = "//counter.yadro.ru/hit;payalnik_all?r"+
+escape(document.referrer)+((typeof(screen)=="undefined")?"":
+";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+";h"+escape(document.title.substring(0,80))+
+";"+Math.random();//--></script><!--/LiveInternet-->
+
+<!--begin of Ramblers Top100 code -->
+<img src="./Часы из дисплея покупателя (VFD) v2_files/top100.cnt" width="1" height="1" border="0">
+<!--end of Top100 code-->
+
+<script type="text/javascript">!function(){var t=document.createElement("script");t.type="text/javascript",t.async=!0,t.src="https://vk.com/js/api/openapi.js?168",t.onload=function(){VK.Retargeting.Init("VK-RTRG-58939-3wAiA"),VK.Retargeting.Hit()},document.head.appendChild(t)}();</script><noscript><img src="https://vk.com/rtrg?p=VK-RTRG-58939-3wAiA" style="position:fixed; left:-999px;" alt=""/></noscript>
+
+</div>
+<!-- Конец НЕВИДИМЫХ СЧЕТЧИКОВ -->
+
+<div class="wrap">
+			<div id="antiAdBlock" style="padding: 5px; display: none; position: fixed; width: 100%; left: 0; top: 0; z-index: 151; font-size: 10px; text-align: center; color: #fff; background: #e90000;">
+			Обнаружен блокировщик рекламы. Сайт Паяльник существует только за счет рекламы, поэтому мы были бы Вам благодарны если Вы внесете сайт в список исключений. <a href="https://cxem.net/anti_ad_block.php" style="color: #fff;">Как это сделать?</a>
+			
+			<div style="position: absolute; top: 50%; right: 5px; margin-top: -7px; padding: 0 5px; background: #fff; color: #000; cursor: pointer;" onclick="closeAntiAdblock(this);">x</div>
+		</div>
+		
+<!-- Начало ШАПКИ -->
+	<div id="header">
+		<div class="left"></div>
+		<div class="right"></div>
+		<div class="schem"></div>
+		<a href="https://cxem.net/" class="logo"><img src="./Часы из дисплея покупателя (VFD) v2_files/logo.png" alt="Паяльник" border="0"></a>
+		<div class="round"></div>
+		<div class="hend"></div>
+		<div class="social_shapka">
+			<a href="https://vk.com/cxem_net_payalnik" rel="nofollow"><img src="./Часы из дисплея покупателя (VFD) v2_files/social_vk_shapka.png" border="0"></a>
+			<!-- <a href="https://www.youtube.com/channel/UCh9cB06Agv1Z8QTIkiGqotA?sub_confirmation=1" rel="nofollow"><img src="//cxem.net/images/social_yt_shapka.png" border="0"></a> -->
+			<!-- <a href="https://www.facebook.com/cxemnet" rel="nofollow"><img src="//cxem.net/images/social_fb_shapka.png" border="0"></a> -->
+		</div>
+		<div class="name"></div>
+		<div class="buttons">
+			<a href="https://translate.google.com/translate?hl=ru&amp;sl=ru&amp;tl=en&amp;u=//cxem.net/arduino/arduino275.php" class="lang" title="Translate to English"><img src="./Часы из дисплея покупателя (VFD) v2_files/lang-eng.png" alt="English" border="0"></a>
+			<form action="https://cxem.net/search.php" method="get" class="search">
+				<div class="submit"><button type="submit"><img src="./Часы из дисплея покупателя (VFD) v2_files/but-search.png" alt="OK"></button></div>
+				<div class="field">
+				<input type="hidden" name="searchid" value="841983">
+				<input type="hidden" name="web" value="0">
+				<input type="search" name="text"></div>
+			</form>
+			<div class="links">
+				<div class="rightCorner">&nbsp;</div>
+				<ul>
+					<li class="first last"><a href="https://cxem.net/circuit_send.php"><span><img src="./Часы из дисплея покупателя (VFD) v2_files/link-publish.png" alt="Прислать схему" border="0" title="Пришлите схему и получите гонорар"></span></a></li>
+				</ul>	
+				<div class="leftCorner">&nbsp;</div>
+			</div>
+		</div>
+		<div class="nav">
+			<ul class="menu">
+				<li><a href="https://cxem.net/chems.php" class="item"><b></b><span><div class="sprite_menu chems"></div></span><i></i></a>
+					<div class="subnav">
+						<div class="subnav-bg"></div>
+						<ul>
+							<li><a href="https://cxem.net/sound/sound.php"><em>&gt;</em>Аудио</a>
+								<div class="subnav">
+									<div class="subnav-bg"></div>
+									<ul>
+										<li><a href="https://cxem.net/sound/dinamics/dinamics.php">Динамики, сабвуферы </a></li>
+										<li><a href="https://cxem.net/sound/amps/amps.php">Усилители НЧ и ламповые УНЧ </a></li>
+										<li><a href="https://cxem.net/sound/tembrs/tembrs.php">Регуляторы тембра, эквалайзеры</a></li>
+										<li><a href="https://cxem.net/sound/soundpred/soundpred.php">Предварительные усилители</a></li>
+										<li><a href="https://cxem.net/sound/light/light.php">Светомузыкальные установки</a></li>
+										<li><a href="https://cxem.net/sound/music/music.php">Эффекты и примочки</a></li>
+									</ul>
+								</div>
+							</li>
+							<li><a href="https://cxem.net/avto/avto.php"><em>&gt;</em>Авто-электроника</a>
+								<div class="subnav">
+									<div class="subnav-bg"></div>
+									<ul>
+										<li><a href="https://cxem.net/avto/electronics/4.php">Электроника для автомобиля</a></li>
+										<li><a href="https://cxem.net/avto/alarm/alarm.php">Охранные устройства и сигнализации</a></li>
+										<li><a href="https://cxem.net/avto/injectors/inject.php">Инжектор</a></li>
+									</ul>
+								</div>
+							</li>
+							<li><a href="https://cxem.net/arduino/arduino275.php#"><em>&gt;</em>Радиоприем и передача</a>
+								<div class="subnav">
+									<div class="subnav-bg"></div>
+									<ul>
+										<li><a href="https://cxem.net/tuner/tuner.php">Радиоприемники</a></li>
+										<li><a href="https://cxem.net/cb/1.php">Си-Би техника связи</a></li>
+										<li><a href="https://cxem.net/rmodem/rmodem.php">Радиомодемы</a></li>
+										<li><a href="https://cxem.net/radiomic/radiomics.php">Радиомикрофоны и радиопередатчики</a></li>
+										<li><a href="https://cxem.net/indicator/indicator.php">Детекторы радиозакладок</a></li>							
+									</ul>
+								</div>
+							</li>
+							<li><a href="https://cxem.net/arduino/arduino275.php#"><em>&gt;</em>Автоматика в быту</a>
+								<div class="subnav">
+									<div class="subnav-bg"></div>
+									<ul>
+										<li><a href="https://cxem.net/house/1.php">Домашняя электроника</a></li>
+										<li><a href="https://cxem.net/greentech/greentech.php">Зеленые технологии</a></li>										
+										<li><a href="https://cxem.net/ik/2.php">Инфракрасная техника</a></li>
+										<li><a href="https://cxem.net/dozimetr/3.php">Осторожно радиация</a></li>
+										<li><a href="https://cxem.net/medic/medic.php">Медицинская техника</a></li>
+										<li><a href="https://cxem.net/elud/elud_r.php">Для рыболова</a></li>
+										<li><a href="https://cxem.net/metal/metal.php">Металлоискатели</a></li>
+										<li><a href="https://cxem.net/guard/3.php">Охранные устройства</a></li>
+									</ul>
+								</div>
+							</li>
+							<li><a href="https://cxem.net/beginner/beginner.php">Начинающим</a></li>
+							<li><a href="https://cxem.net/telefon/2.php">Телефония и фрикинг</a></li>
+							<li><a href="https://cxem.net/comp/comp.php">Компьютерная электроника</a></li>
+							<li><a href="https://cxem.net/mc/mc.php">Микроконтроллеры</a></li>
+							<li><a href="https://cxem.net/arduino/arduino.php">Arduino</a></li>
+							<li><a href="https://cxem.net/uprav/uprav.php">Роботы и РУ-модели</a></li>
+							<li><a href="https://cxem.net/tv/tv.php">Телевизионная техника</a></li>
+							<li><a href="https://cxem.net/ntv/ntv.php">Спутниковое ТВ</a></li>
+							<li><a href="https://cxem.net/sotov/sotov.php">Сотовая связь</a></li>
+							<li><a href="https://cxem.net/izmer/izmer.php">Измерительная техника</a></li>
+							<li><a href="https://cxem.net/remont/remont.php">Ремонт бытовой техники</a></li>
+							<li><a href="https://cxem.net/pitanie/5.php">Источники питания и ЗУ</a></li>
+							<li><a href="https://cxem.net/electric/electric.php">Электрика</a></li>
+							<li><a href="https://cxem.net/promelectr/promelectr.php">Промышленная электроника</a></li>
+							<li><a href="https://cxem.net/tesla/tesla.php">Высокое напряжение и Тесла</a></li>
+							<li><a href="https://cxem.net/master/oglav.php">Мастерская радиолюбителя</a></li>
+							<li><a href="https://cxem.net/review/review.php">Обзоры устройств и приборов</a></li>
+							<li><a href="https://cxem.net/sprav/sprav.php">Справочные материалы</a></li>
+						</ul>
+					</div>
+				</li>
+				<li><a href="https://cxem.net/programs.php" class="item"><b></b><span><div class="sprite_menu programs"></div></span><i></i></a>
+					<div class="subnav">
+						<div class="subnav-bg"></div>
+						<ul>
+							<li><a href="https://cxem.net/calc/calc.php">Он-лайн калькуляторы</a></li>
+							<li><a href="https://cxem.net/software/soft_PCB.php">PCB</a></li>
+							<li><a href="https://cxem.net/software/soft_CAD.php">CAD</a></li>
+							<li><a href="https://cxem.net/software/soft_sketch.php">Черчение схем</a></li>
+							<li><a href="https://cxem.net/software/soft_audio.php">Аудио-софт</a></li>
+							<li><a href="https://cxem.net/software/soft_mcu.php">Микроконтроллеры</a></li>
+							<li><a href="https://cxem.net/software/soft_measurement.php">Измерения</a></li>
+							<li><a href="https://cxem.net/software/soft_generator.php">Генераторы</a></li>
+							<li><a href="https://cxem.net/software/soft_calc.php">Расчеты</a></li>
+							<li><a href="https://cxem.net/software/soft_android.php">Android</a></li>
+							<li><a href="https://cxem.net/software/soft_misc.php">Разное</a></li>
+						</ul>
+					</div>
+				</li>
+				<li><a href="https://cxem.net/video.php" class="item"><b></b><span><div class="sprite_menu videos"></div></span><i></i></a>
+				<div class="subnav">
+						<div class="subnav-bg"></div>
+						<ul>
+							<li><a href="https://cxem.net/video.php?category=1">Начинающим</a></li>
+							<li><a href="https://cxem.net/video.php?category=3">Микроконтроллеры</a></li>
+							<li><a href="https://cxem.net/video.php?category=4">Питание</a></li>
+							<li><a href="https://cxem.net/video.php?category=6">Аудио</a></li>
+							<li><a href="https://cxem.net/video.php?category=7">Высокое напряжение</a></li>
+							<li><a href="https://cxem.net/video.php?category=8">Обзоры</a></li>
+							<li><a href="https://cxem.net/video.php?category=5">Мастерская</a></li>																	
+						</ul>
+					</div>
+				</li>	
+				
+				<li><a href="https://forum.cxem.net/" class="item"><b></b><span><div class="sprite_menu forum"></div></span><i></i></a></li>
+
+				<li><a href="https://cxem.net/konkurs.php" class="item"><b></b><span><div class="sprite_menu konkurs"></div></span><i></i></a>
+				<div class="subnav">
+						<div class="subnav-bg"></div>
+						<ul>
+							<li><a href="https://cxem.net/top.php">Рейтинг статей</a></li>
+							<!-- <li><a href="//cxem.net/hardzone.php">ЖелеZona</a></li>		 -->					
+							<li><a href="https://cxem.net/konkurs.php">Конкурсы с призами</a></li>							
+						</ul>
+					</div>
+				</li>				
+				<li><a href="https://cxem.net/magazines/magazines.php" class="item"><b></b><span><div class="sprite_menu shops"></div></span><i></i></a>
+					<div class="subnav">
+						<div class="subnav-bg"></div>
+						<ul>
+							<li><a href="https://cxem.net/magazines/maps.php">Карта радио магазинов</a></li>
+							<li><a href="https://cxem.net/magazines/magazines.php">Обзоры интернет-магазинов</a></li>
+							<!-- <li><a href="//cxem.net/books.php">Литература</a></li> -->
+						</ul>
+					</div>
+				</li>
+				<!--
+				<li><a href="//cxem.net/konkurs2023.php" class="item"><b></b><span><div class="sprite_menu_konkurs2023"></div></span><i></i></a>	
+				<li><a href="https://www.youtube.com/channel/UCh9cB06Agv1Z8QTIkiGqotA?sub_confirmation=1" class="item" title="Крупнейший видеоканал по радиоэлектронике" rel="nofollow"><b></b><span><div class="sprite_menu_payalnikTV"></div></span><i></i></a></li>-->
+						</ul>
+            <ul class="enter">
+            	            		<li class="gologin myname" title="Войти в свой профиль" onclick="location.href = &#39;https://cxem.net/cms/login/&#39;">
+                		Войти
+                	</li>
+					
+                           </ul>
+		</div>
+	</div>
+<!-- Конец ШАПКИ -->
+
+<div style="text-align: center"><div class="rek_plashka"><div style="text-align: center;"><a href="https://tmelectronics.ru/?erid=4CQwVszL76wmsDyni52"><img src="./Часы из дисплея покупателя (VFD) v2_files/cxem_top_1717426198.gif"></a></div><span class="plashka_tooltip" data-microtip-position="bottom-left" role="tooltip" data-microtip-size="medium" aria-label="ООО ТМ ЭЛЕКТРОНИКС, ИНН: 7806548420, info@tmelectronics.ru, +7(812)4094849">Реклама ⓘ</span></div></div><div align="right" style="padding-right:5px; opacity: 0.7"><a href="https://cxem.net/" class="chems">Главная</a> <img src="./Часы из дисплея покупателя (VFD) v2_files/arrow.gif" alt="»"> <a href="https://cxem.net/arduino/arduino.php" class="chems">Arduino</a></div>
+
+<div class="cont_right">
+	
+<!-- div style="text-align:center; padding: 10px 0px" ><a href="https://s.click.aliexpress.com/e/_DEGdpov"><img src="//cxem.net/images/sunfounder.gif" alt="SunFounder"></a></div> -->
+	
+	<!-- start widget -->
+	<div class="concurs-top"><div class="concurs-title" title="Призовой фонд на июль 2024 г.">Призовой фонд<br>на июль 2024 г.</div><div class="concurs-content"><div class="concurs-place"><div class="concurs-prize">1. 100 руб.</div><div class="concurs-sponsor">От пользователей</div></div></div><div class="concurs-link"><a href="http://cxem.net/rating_cash.php" class="button button-black">присоединиться</a></div></div>	<!-- end widget -->
+	
+	<h4>Похожие статьи:</h4><ul><li><a href="https://cxem.net/arduino/arduino250.php">Часы на ардуино из дисплея покупателя (VFD)</a></li></ul>	<br>
+
+
+	<object data="./Часы из дисплея покупателя (VFD) v2_files/180x450_Right.html" style="height:450px; width:100%"></object>
+
+	<!--
+	<script src="https://cxem.net/js/reports.js"></script>
+	<p align="center" style="padding-top: 15px; cursor: pointer;"><img src="/images/error_report.png" title="Нашли ошибку? Нажмите ctrl+enter для уведомления" onclick="Report.show(3);"></p>
+	-->
+	
+	
+</div>
+
+<div class="cont_left" style="position: static; top: auto; width: 215px; margin-top: 20px;">
+	<div class="rek_plashka" id="cxem_left" style="left: 12px;">
+	<div align="center"><a href="https://www.pcbonline.com/blog/printed-circuit-assembly-pca.html?erid=4CQwVszL76wmsDyo3dS"><img src="./Часы из дисплея покупателя (VFD) v2_files/cxem_left_1719380252.gif"></a></div><span class="plashka_tooltip" data-microtip-position="bottom-left" role="tooltip" data-microtip-size="medium" aria-label="Chevalier House, 45-51 Chatham Road South, Tsim Sha Tsui, Hong Kong, +08627398155  ">Реклама ⓘ</span>	</div>
+
+	<p align="center" style="padding-top: 10px"><a href="https://cxem.net/rating_cash.php"><img src="./Часы из дисплея покупателя (VFD) v2_files/donate.png" title="Поддержите авторов статей сайта Паяльник!" border="0"></a></p>
+
+	<div align="center" style="padding-top: 15px" id="yds-panel2">
+		<div id="show_leftpanel_books" style="display:none">
+    	<div style="text-align: center; margin-bottom:23px">
+	<div class="cbooks-image">
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/104_s.jpg" title="Набор для сборки - LED лампа" alt="Набор для сборки - LED лампа">
+		<div class="bottom_hint">Набор для сборки - LED лампа</div>
+	</div>
+	<div style="padding-top:7px"><a href="http://alipromo.com/redirect/cpa/o/06e7b9eccb259b2317bca9aa0e8007a6" rel="nofollow" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;aliexpress&#39;, &#39;click-leftpanel&#39;, &#39;Набор для сборки - LED лампа&#39;);" style="background: #2f91e1; background: linear-gradient(top, #2f91e1, #175aaa);border-radius: 15px; border: none; padding: 5px 10px; color: #fff; text-decoration: none;">Купить 2 $</a></div>
+</div><div style="text-align: center; margin-bottom:23px">
+	<div class="cbooks-image">
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/82_s.jpg" title="Автомобильный GPS-трекер с GSM/GPRS и дистанционным управлением" alt="Автомобильный GPS-трекер с GSM/GPRS и дистанционным управлением">
+		<div class="bottom_hint">Автомобильный GPS-трекер с GSM/GPRS и дистанционным управлением</div>
+	</div>
+	<div style="padding-top:7px"><a href="http://alipromo.com/redirect/cpa/o/e3e1711dac8930020175b288b104a7f4" rel="nofollow" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;aliexpress&#39;, &#39;click-leftpanel&#39;, &#39;Автомобильный GPS-трекер с GSM/GPRS и дистанционным управлением&#39;);" style="background: #2f91e1; background: linear-gradient(top, #2f91e1, #175aaa);border-radius: 15px; border: none; padding: 5px 10px; color: #fff; text-decoration: none;">Купить 37 $</a></div>
+</div><div style="text-align: center; margin-bottom:23px">
+	<div class="cbooks-image">
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/126_s.jpg" title="Ручной фен 450 Вт с регулировкой температуры" alt="Ручной фен 450 Вт с регулировкой температуры">
+		<div class="bottom_hint">Ручной фен 450 Вт с регулировкой температуры</div>
+	</div>
+	<div style="padding-top:7px"><a href="http://alipromo.com/redirect/cpa/o/e9a92053b8d3c4c64fcf33cfff5c4b31" rel="nofollow" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;aliexpress&#39;, &#39;click-leftpanel&#39;, &#39;Ручной фен 450 Вт с регулировкой температуры&#39;);" style="background: #2f91e1; background: linear-gradient(top, #2f91e1, #175aaa);border-radius: 15px; border: none; padding: 5px 10px; color: #fff; text-decoration: none;">Купить 35 $</a></div>
+</div>  	</div>	
+	</div>
+
+<script>window.yaContextCb.push(()=>{
+  Ya.Context.AdvManager.render({
+    renderTo: 'yds-panel2',
+    blockId: 'R-A-126079-2'
+  })
+})</script>
+
+
+
+
+</div>
+	
+<div class="cont">
+
+	<div id="product-anti-ad"></div>
+
+<script type="text/javascript">	
+    $(document).ready(function() {
+		$('.subscribe').hide();
+		var interval;
+
+		$('ul.tags li').hover(function(e) {
+			var popup = $(this).find('div');
+			var tag = $(this).find('a').attr('id');
+			interval = setTimeout(function() {
+				$.getJSON(URL + '/index.php?q=tagsubscribe/', 'tag=' + tag, function(json) {
+					if (json.success) {
+						popup.css('left', 0);
+						popup.html(json.message);
+						popup.show();
+					}
+				});
+			}, 600);
+		},
+		function() {
+			var popup1 = $(this).find('div');
+			popup1.html('');
+			popup1.hide();
+			clearInterval(interval);
+		});
+
+
+		//Подписать на тег
+		$('a[rel="subscribe"]').live('click', function() {
+			var a = $(this);
+			var tag = a.attr('id');
+			var user_id = '0';
+			if (user_id == 0) {
+				alert('Необходима регистрация');
+				return false;
+			}
+			$.getJSON(URL + '/index.php?q=tagsubscribe/', 'tag=' + tag + '&action=subscribe', function(json) {
+				if (json.success) {
+					a.attr('rel', 'unsubscribe');
+					a.text('отписаться');
+					a.unwrap('<u>');
+					a.wrap('<i>');
+				} else {
+					alert(json.message);
+				}
+			});
+			return false;
+		});
+
+		//Отписаться на тег
+		$('a[rel="unsubscribe"]').live('click', function() {
+			var a = $(this);
+			var tag = a.attr('id');
+			var user_id = '0';
+			if (user_id == 0) {
+				alert('Необходима регистрация');
+				return false;
+			}
+			$.getJSON(URL + '/index.php?q=tagsubscribe/','tag=' + tag + '&action=unsubscribe', function(json) {
+				if (json.success) {
+					a.attr('rel', 'subscribe');
+					a.text('подписаться');
+					a.unwrap('<i>');
+					a.wrap('<u>');
+				} else {
+					alert(json.message);
+				}
+			});
+			return false;
+		});
+
+	});
+</script><script>
+
+function loadJSCSS(src, type, callback) {
+	var link;
+	if (type == 'js') {
+		link = document.createElement('script');
+		link.setAttribute('src', src);
+		link.setAttribute('type', 'text/javascript');
+		if (callback) {
+			link.onload = callback;
+		}
+	} else if (type == 'css') {
+		link = document.createElement('link');
+		link.setAttribute('rel', 'stylesheet');
+		link.setAttribute('href', src);
+		link.setAttribute('type', 'text/css');
+	}
+	
+	if (typeof link != 'undefined') document.head.insertBefore(link, document.head.firstChild);
+}
+
+	$(document).ready(function() {
+		var f = '.main_content';
+		
+		if ($(f).length == 0) f = '#longright';
+		
+		var lng = new Array();
+		if ($(f).length == 1) {
+			$(f).find('pre').each(function() {
+				var l = this.className.split(':');
+				var lName = this.className.split(':')[l.length - 1].replace(';', '').trim();
+			
+				if (lng.length == 0) {
+					lng.push(lName);
+				} else {
+					for (var i in lng) {
+						if (lng[i] == lName) continue;
+						lng.push(lName);
+					}
+				}				
+			});
+		}
+		
+		if (lng.length > 0) {
+			
+			loadJSCSS(location.protocol + '//' + location.host + '/cms/views/js/syntax/styles/shCoreEclipse.css', 'css');
+			loadJSCSS(location.protocol + '//' + location.host + '/cms/views/js/syntax/scripts/shCore.js', 'js', function() {
+				for (var i in lng) {
+					var lang = lng[i].trim();		
+					if (lang === '') continue;
+				
+					if (lang == 'js') lang = 'JScript';
+					else if (lang == 'csharp') lang = 'CSharp';
+					else lang = lang[0].toUpperCase() + lang.substring(1);
+
+					var file = location.protocol + '//' + location.host + '/cms/views/js/syntax/scripts/shBrush' + lang + '.js';
+					loadJSCSS(file, 'js');
+				}
+				SyntaxHighlighter.all();
+			});
+		
+		}
+	
+	});
+	
+</script>
+
+
+
+
+
+<script>
+
+	function scrollIntoViewIfOutOfView(el) {
+		var topOfPage = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+		var heightOfPage = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+
+		var elY = 0;
+		var elH = 0;
+		if (document.layers) { // NS4
+			elY = el.y;
+			elH = el.height;
+		}
+		else {
+			for(var p=el; p&&p.tagName!='BODY'; p=p.offsetParent){
+				elY += p.offsetTop;
+			}
+			elH = el.offsetHeight;
+		}
+		if ((topOfPage + heightOfPage) < (elY + elH)) {
+			el.scrollIntoView(false);
+		}
+		else if (elY < topOfPage) {
+			el.scrollIntoView(true);
+		}
+	}
+
+
+	//Show information about radioelement
+	function printDataOfElement(elem, id, s_id, r_id) {
+		$(elem).parent().css('position', 'relative');
+		$('.popup-element').remove();
+
+		var popoup = document.createElement('div');
+		popoup.className = 'popup-element';
+		$(popoup).html('Пожалуйста, подождите...');
+
+		$(elem).parent().append(popoup);
+		$(popoup).css('top', '-' + ($(popoup).height() + 16) + 'px');
+
+		var data = 'dataofelement=1';
+		if (id) {
+			data += '&id=' + id;
+		} else {
+			data += '&s_id=' + s_id + '&r_id=' + r_id;
+		}
+
+		$.ajax({
+			url: '/cms/index.php?q=partinfo/',
+			data: data,
+			type: 'post',
+			dataType: 'json',
+			success: function(json) {
+				if (json.success) {
+					$(popoup).html(json.html.main + '<div id="alldata" class="alldata">Показать дополнительные параметры</div>');
+					$('#alldata').live('click', function() {
+						$(popoup).html(json.html.main + json.html.additional);
+						$(popoup).css('top', '-' + ($(popoup).height() + 16) + 'px');
+						scrollIntoViewIfOutOfView(popoup);
+					});
+
+				} else {
+					$(popoup).html(json.message);
+				}
+				$(popoup).css('top', '-' + ($(popoup).height() + 16) + 'px');
+				scrollIntoViewIfOutOfView(popoup);
+			}
+		});
+	}
+
+
+    function printResistor(elem, value) {
+
+        $(elem).parent().css('position', 'relative');
+        $('.popup-element').remove();
+
+        var popoup = document.createElement('div');
+        popoup.className = 'popup-element';
+        $(popoup).html('Пожалуйста, подождите...');
+
+        $(elem).parent().append(popoup);
+        $(popoup).css('top', '-' + ($(popoup).height() + 16) + 'px');
+
+        var data = 'value=' + encodeURIComponent(value);
+
+        $.ajax({
+            url: '/cms/index.php?q=resistorcolor/',
+            data: data,
+            type: 'post',
+            dataType: 'json',
+            success: function(json) {
+
+                if (json.success) {
+                      $(popoup).html(json.message);
+                } else {
+                    $(popoup).html(json.message);
+                }
+                $(popoup).find('img').load(function() {
+                    $(popoup).css('top', '-' + ($(popoup).height() + 16) + 'px');
+                });
+                $(popoup).css('top', '-' + ($(popoup).height() + 16) + 'px');
+                scrollIntoViewIfOutOfView(popoup);
+            }
+        });
+    }
+
+	$(document).ready(function() {
+		$('.popup-close').live('click', function() {
+			$('.popup-element').remove();
+		});
+	});
+</script>
+
+<script type="text/javascript" src="./Часы из дисплея покупателя (VFD) v2_files/arating.js.Без названия"></script>
+<script src="./Часы из дисплея покупателя (VFD) v2_files/jquery.tooltip.js.Без названия"></script>
+<link type="text/css" rel="stylesheet" href="./Часы из дисплея покупателя (VFD) v2_files/jquery.tooltip.css">
+
+
+
+
+<script>
+
+	var jquerysetting = {
+		allowAdd: false,
+		allowEdit: false,
+		allowDelete: false
+	}
+	
+function smallerImage(field, notes) {
+	window.onload = function() {
+
+		if (notes) {
+			$(field + ' img').jQueryNotes(jquerysetting);
+		}
+
+		var mfield = field.substring(1);
+		var images = document.getElementById(mfield);
+		if (!images) images = document.getElementsByClassName(mfield)[0];
+
+		images = images.getElementsByTagName('img');
+
+		for (var i = 0; i < images.length; i++) {
+			var img = images[i];
+			img.removeAttribute('style');
+			var width = img.naturalWidth;
+			
+			if (width == 0) {
+				img.onload = function(e) {
+					width = this.width;
+				}
+			}
+
+			if (width > 700) {
+
+				var src = img.src;
+				img.removeAttribute('style');
+				img.className = 'small';
+
+				img.title = 'Нажмите для увеличения';
+
+				var wrapper = document.createElement('a');
+				wrapper.href = src;
+				wrapper.rel = 'lightbox';
+				wrapper.appendChild(img.cloneNode(true));
+				img.parentNode.replaceChild(wrapper, img);
+			}
+            else if (img.src.indexOf('/_thumbs/') > -1) {
+
+
+                var wrapper = document.createElement('a');
+                wrapper.href = img.src.replace('/_thumbs/', '/images/');
+                img.title = 'Нажмите для увеличения';
+                wrapper.rel = 'lightbox';
+				wrapper.target = '_blank';
+                wrapper.appendChild(img.cloneNode(true));
+                img.parentNode.replaceChild(wrapper, img);
+
+            }
+		}
+
+
+		
+
+			
+	}
+		
+}
+		
+	
+	
+	
+		
+
+</script>
+
+ <script type="text/javascript">
+
+	$(document).ready(function() {
+		smallerImage('.main_content', false);
+	});
+
+	
+</script>
+
+
+
+<h1 align="center">Часы из дисплея покупателя (VFD) v2</h1>
+
+<div id="yandex_rtb_R-A-126079-6"></div>
+<script type="text/javascript">
+    (function(w, d, n, s, t) {
+        w[n] = w[n] || [];
+        w[n].push(function() {
+            Ya.Context.AdvManager.render({
+                blockId: "R-A-126079-6",
+                renderTo: "yandex_rtb_R-A-126079-6",
+                async: true
+            });
+        });
+        t = d.getElementsByTagName("script")[0];
+        s = d.createElement("script");
+        s.type = "text/javascript";
+        s.src = "//an.yandex.ru/system/context.js";
+        s.async = true;
+        t.parentNode.insertBefore(s, t);
+    })(this, this.document, "yandexContextAsyncCallbacks");
+</script>
+<div class="main_content">
+	<p>Хочу представить вам следующий этап развития идеи построения часов на базе вакуумно-люминесцентного дисплея (Дисплея покупателя).</p>
+
+<p><img alt="" src="./Часы из дисплея покупателя (VFD) v2_files/arduino275-1.jpg"></p>
+
+<p>Автором данного варианта устройства является&nbsp;<strong><a href="https://cxem.net/profile/26634/">devICEpro</a>,&nbsp;</strong>вся информация в статье публикуется с его согласия и при непосредственном участии.&nbsp;</p>
+
+<p>Итак, кратко предыстория. Все начиналось с этой статьи (<strong><a href="https://cxem.net/arduino/arduino250.php">Часы на ардуино из дисплея покупателя (VFD)</a></strong>). Часы получились довольно интересными, но не лишенными недостатков, главным из которых было то, что возможность создавать и использовать свои символы есть не во всех дисплеях и, соответственно, далеко не все из них подходили для этого проекта. В том варианте реализации&nbsp;управление колбой осуществлялось посредством родного&nbsp;процессора, установленного на плате, который использовал встроенный стандартный знакогенератор, а Arduino&nbsp;только передавала ему данные и команды по UART. Для решения проблемы логичным шагом будет переход к прямому управлению колбой самим микроконтроллером непосредственно. На тот момент в сети уже были некоторые наработки по поводу прямого управления колбой вакуумно-люминесцентного индикатора на сайте&nbsp;<a href="http://www.mantrid.ru/">http://www.mantrid.ru/</a>, однако описанное там устройство было сугубо узкоспециализированным и малоприменимым в контексте работы с платформой&nbsp;ардуино, в связи с чем решено было заняться разработкой собственной прошивки. Свой вариант&nbsp;реализации&nbsp;я изложил&nbsp;предыдущей статье (<strong><a href="https://cxem.net/mc/mc503.php">Теория и практика управления вакуумно-люминесцентными дисплеями</a></strong>), где описано, как&nbsp;для этих целей можно использовать МК <strong>ESP32</strong>. Выложенная там прошивка представляет собой инструмент для дальнейших разработок, позволяющий выводить любую информацию на эти дисплеи.</p>
+
+<p>Автор же данной реализации пошел по другому пути, и в&nbsp;этой статье речь пойдет уже о функциональном законченном устройстве, а именно о часах с различными дополнительными функциями, такими как таймер, отображение температуры (в помещении и наружной), влажности, атмосферного давления. А также с возможностью настраивать интерфейс устройства: устанавливать&nbsp;различные шрифты, настраивать анимацию для отображения информации, регулировать яркость экрана в зависимости от внешней освещенности.</p>
+
+<p>Основой устройства будет служить микроконтроллер <strong>ATmega328</strong>, а именно <strong>Arduino Nano V.3</strong>&nbsp;Устройство способно работать с самыми распространенными типами дисплеев для кассовых аппаратов, а именно&nbsp;<strong>DN2029D</strong>,&nbsp;<strong>202MD20GINK </strong>(его аналоги <strong>CIG40-2003N</strong>,<strong> CIG40-2004N</strong>) и&nbsp;<strong>202MD25GINK</strong>. Колба <strong>Futaba&nbsp;202MD25GINK</strong>&nbsp;хоть и поддерживается программно, однако к использованию не рекомендуется, т.к. у нее очень большое расстояние между строчками и большие цифры (т.к. они состоят из нескольких знакомест) выглядят не очень хорошо на этом экране. Внешне отличить такую колбу можно по отсутствию сегментов, отображающих курсор и точки с запятыми.</p>
+
+<p><img alt="" src="./Часы из дисплея покупателя (VFD) v2_files/arduino275-2.jpg"></p>
+
+<p>Определение типа подключенного дисплея происходит автоматически и не требует каких-либо изменений в коде прошивки. В случае если тип дисплея определить&nbsp;не удалось, система оповестит об этом звуковым сигналом. Также в автоматическом режиме происходит определение подключенных датчиков.</p>
+
+<p>Итак, рассмотрим подробно интерфейс устройства. В рабочем режиме на экране отображается текущее время и дополнительная информация: дата, температура давление и влажность.&nbsp;Конкретный набор параметров зависит от подключенных датчиков. Возможны шесть вариантов&nbsp;отображения с разными шрифтами и их комбинациями.</p>
+
+<p><img alt="" src="./Часы из дисплея покупателя (VFD) v2_files/arduino275-3.jpg"><img alt="" src="./Часы из дисплея покупателя (VFD) v2_files/arduino275-4.jpg"><img alt="" src="./Часы из дисплея покупателя (VFD) v2_files/arduino275-5.jpg"><img alt="" src="./Часы из дисплея покупателя (VFD) v2_files/arduino275-6.jpg"><img alt="" src="./Часы из дисплея покупателя (VFD) v2_files/arduino275-7.jpg"><img alt="" src="./Часы из дисплея покупателя (VFD) v2_files/arduino275-8.jpg"></p>
+
+<p>В вариантах с крупными цифрами попеременно отображается дата и температура/влажность слева и справа от цифр времени. Сделано это, во-первых, для того чтобы удобно разместить&nbsp;всю информацию на экране, а, во-вторых, для продления срока службы колбы, т.к. длительное свечение одних и тех же пикселей приводит к деградации люминофора и уменьшению яркости:</p>
+
+<p><img alt="" src="./Часы из дисплея покупателя (VFD) v2_files/arduino275-9.jpg"><img alt="" src="./Часы из дисплея покупателя (VFD) v2_files/arduino275-3.jpg"></p>
+
+<p>На плате предусмотрен датчик положения (ртутный замыкатель). При повороте часов вертикально&nbsp;меняется стиль отображения и выводимая информация, а именно появляется анимация песочных часов, активизируется режим таймера и градусника.</p>
+
+<p><img alt="" src="./Часы из дисплея покупателя (VFD) v2_files/arduino275-11.jpg"><img alt="" src="./Часы из дисплея покупателя (VFD) v2_files/arduino275-12.jpg"><img alt="" src="./Часы из дисплея покупателя (VFD) v2_files/arduino275-13.jpg"></p>
+
+<p>Для управления настройками устройства предусмотрено три кнопки&nbsp;"+", "меню" и&nbsp;"-", также управление возможно с использованием энкодера, логика работы следующая:&nbsp;кнопка энкодера аналогична кнопке "меню", поворот лево/право&nbsp;- кнопки "+"/"-", зажатый поворот энкодера - нажатие и удержание кнопок "+"/"-" соответственно. Также есть возможность использования аналоговой клавиатуры из трех кнопок, подключенной к А2 (см. схему).&nbsp;Для переключения режима отображения информации на главном экране необходимо зажать и удерживать кнопку "+" или "-", нажатие и удержание кнопки "меню" открывает, собственно, меню настроек. Однократные нажатия клавиш "+"/"-" в основном режиме работы игнорируются, для того чтобы избежать случайного изменения настроек, однократное нажатие "меню" включает на 5 сек. отображение температуры с внешнего термодатчика (<strong>DS18B20</strong>):</p>
+
+<p><img alt="" src="./Часы из дисплея покупателя (VFD) v2_files/arduino275-14.jpg"></p>
+
+<p>Рассмотри меню настроек, чтобы в него попасть необходимо зажать кнопку "меню" либо кнопку энкодера.&nbsp;</p>
+
+<p>Меню имеет следующую структуру:</p>
+
+<ul>
+	<li><strong>Настройки анимации</strong></li>
+	<li><strong>Дата/время</strong></li>
+	<li><strong>Настройки сигнала</strong></li>
+	<li><strong>Настройки яркости</strong></li>
+	<li><strong>Корректировка температуры</strong></li>
+	<li><strong>Выход</strong></li>
+</ul>
+
+<p>Теперь по порядку пройдемся по пунктам.&nbsp;</p>
+
+<p><strong>Настройки анимации.</strong></p>
+
+<p><img alt="" src="./Часы из дисплея покупателя (VFD) v2_files/arduino275-15.jpg"></p>
+
+<p>Собственно анимация представляет из себя прокрутку символов или строк при обновлении информации на дисплее, здесь два пункта, "символ" позволяет настроить скорость прокрутки при смене отдельных символов (секунд), "экран" - скорость сдвига при обновлении всего экрана. Так же на нижней строке в реальном времени можно увидеть, как выглядят эти эффекты. 0 - эффект отключен, 5 - скорость прокрутки максимальна.</p>
+
+<p><strong>Дата/время.</strong></p>
+
+<p><img alt="" src="./Часы из дисплея покупателя (VFD) v2_files/arduino275-16.jpg"></p>
+
+<p>Тут, думаю, все понятно, собственно - настройка даты и времени.</p>
+
+<p><strong>Настройки сигнала.</strong></p>
+
+<p><img alt="" src="./Часы из дисплея покупателя (VFD) v2_files/arduino275-17.jpg"></p>
+
+<p>Пункт отвечает за включение и время работы часового сигнала (один короткий "пик" каждый час). Устанавливается время начала подачи сигнала и&nbsp;время окончания.</p>
+
+<p><strong>Настройки яркости.</strong></p>
+
+<p><img alt="" src="./Часы из дисплея покупателя (VFD) v2_files/arduino275-18.jpg"></p>
+
+<p>На часах установлен фотодатчик и, соответственно, есть возможность менять яркость дисплея&nbsp;в зависимости от внешней освещенности. На экране отображается текущий уровень яркости, настройка пороговых значений и уровень яркости, на который следует переключиться, когда внешняя освещенность упадет ниже установленной величины. Пороговых значений два, с минимальной разницей в пять единиц, это создает некоторый гистерезис и позволяет избежать спонтанных переключений.&nbsp;</p>
+
+<p><strong>Корректировка температуры.</strong></p>
+
+<p><img alt="" src="./Часы из дисплея покупателя (VFD) v2_files/arduino275-19.jpg"></p>
+
+<p>Здесь можно задать смещение в плюс или в минус температуры, поступающей с датчиков, если есть сомнения в достоверности данных. Особенно это может быть полезно если датчик <strong>BME280 </strong>установлен внутри корпуса устройства и нагревается от дисплея. Так же в меню видно, с какого именно датчика берется температура:&nbsp;c&nbsp;<strong>BME280&nbsp;</strong>или с модуля часов <strong>DS3231&nbsp;</strong>при отсутствии первого.</p>
+
+<p><strong>Выход.</strong></p>
+
+<p>Собственно, выход из меню настроек.</p>
+
+<p>И про вертикальный режим. Кнопки "+" и "-"&nbsp;при удержании&nbsp;здесь меняют отображение секунд (большие или маленькие). При зажатии "меню" активируется таймер обратного отсчета, управление интуитивно понятно, "+",&nbsp;"-"&nbsp;- установка, "меню" - запуск/стоп, по окончании отсчёта 5 звуковых сигналов. А при подключенном датчике&nbsp;<strong>DS18B20</strong>, при нажатии на кнопку "меню" часы превращаются в градусник с аналоговой шкалой, отображающий температуру с этого датчика.</p>
+
+<p>Теперь о прошивке. Как уже было описано в начале, прошивка разработана для<strong> Arduino Nano V.3</strong>. Так как для работы программы&nbsp;из-за достаточно объемных знакогенераторов (шрифтов) требуется много памяти&nbsp;(а точнее - фактически вся, что есть в МК). Автором была проведена работа по оптимизации, поэтому&nbsp;помимо всего прочего используются минимальные версии библиотек. Все необходимые библиотеки будут приложены в архиве со скетчем, рекомендуется использовать именно их, т.к.&nbsp;при использовании актуальных версий с учетом их обновлений, может просто не хватить памяти. Таким образом при использовании комплектных библиотек, прошивка компилируется и никаких изменений и корректировок не требуется.&nbsp;</p>
+
+<p></p><div id="yandex_rtb_R-A-126079-5"></div>
+<script type="text/javascript">
+    (function(w, d, n, s, t) {
+        w[n] = w[n] || [];
+        w[n].push(function() {
+            Ya.Context.AdvManager.render({
+                blockId: "R-A-126079-5",
+                renderTo: "yandex_rtb_R-A-126079-5",
+                async: true
+            });
+        });
+        t = d.getElementsByTagName("script")[0];
+        s = d.createElement("script");
+        s.type = "text/javascript";
+        s.src = "//an.yandex.ru/system/context.js";
+        s.async = true;
+        t.parentNode.insertBefore(s, t);
+    })(this, this.document, "yandexContextAsyncCallbacks");
+</script><p></p>
+
+<p>В зависимости от подключенных датчиков&nbsp;возможны четыре варианта запуска программы:</p>
+
+<ol>
+	<li>“<strong>Lite</strong>”. Только <strong>DS3231</strong>. Только с него и температура.</li>
+	<li><strong>“Lite Plus</strong>”. <strong>DS3232 + DS18B20</strong>. Температура в помещении и за бортом.</li>
+	<li>“<strong>Full</strong>”. <strong>DS3231 + BME280</strong>. Температура, влажность и давление с <strong>BME280</strong>.</li>
+	<li>“<strong>Full Plus</strong>”. <strong>DS3231 + BME280 + DS18B20</strong>. Температура, влажность и давление с <strong>BME280 </strong>+ температура с <strong>DS18B20</strong>.</li>
+</ol>
+
+<p>Как видно, для успешного запуска минимально необходимый набор - это, собственно, сам дисплей и&nbsp;модуль часов&nbsp;<strong>DS3231</strong>. После запуска программа пытается определить тип подключенного дисплея&nbsp;до тех пор, пока это не закончится успехом, поэтому без дисплея, или если он неисправен/не поддерживается, будут слышны&nbsp;одиночные сигналы с периодом примерно около секунды. В ситуации, когда дисплей определился, а модуль часов отсутствует, сообщение об этой ошибке уже будет отображено на экране. В случае успешного запуска, устройство подает три коротких звуковых сигнала и на экране отображается текущее время и пр. данные.</p>
+
+<p><strong>Схема</strong>.</p>
+
+<p><a href="https://cxem.net/arduino/images/arduino275-20.jpg" rel="lightbox" target="_blank"><img alt="" src="./Часы из дисплея покупателя (VFD) v2_files/arduino275-20.jpg" title="Нажмите для увеличения"></a></p>
+
+<p>Теперь коснемся схемотехники. Питается устройство от напряжения от 9 до 30 вольт. На плате имеются два импульсных преобразователя понижающий <strong>LM2596S </strong>и повышающий <strong>XL6009</strong>. Первый понижает входное напряжение до 6,8 вольт, от которых питается накал и плата ардуино, потом это напряжение понижается линейным стабилизатором до 5 вольт, которые используются для питания периферии, датчиков и логики дисплея. Второй преобразователь повышает входное напряжение&nbsp;до 38 вольт, это анодное напряжение для дисплея. Подачей питания высокого напряжения на дисплей управляют два транзистора, таким образом, чтобы оно подавалось только после того, как будет запитана логика (+5в), это очень важное общее требование, согласно документации, для таких дисплеев. Питание нитей накала, как уже было указано, осуществляется от 6.8 вольт сразу после понижающего преобразователя, однако питать накал постоянным током нежелательно. Для создания на накальной обмотке переменного напряжения&nbsp;используется мостовой драйвер&nbsp;<strong>MAX17602 </strong>и таймер <strong>NE555 </strong>для подачи управляющих импульсов. В итоге на накале меандр&nbsp;2 кГц:</p>
+
+<p><img alt="" src="./Часы из дисплея покупателя (VFD) v2_files/arduino275-21.jpg"></p>
+
+<p><strong>Печатная плата.</strong></p>
+
+<p><a href="https://cxem.net/arduino/images/arduino275-22.jpg" rel="lightbox" target="_blank"><img alt="" src="./Часы из дисплея покупателя (VFD) v2_files/arduino275-22.jpg" title="Нажмите для увеличения"></a></p>
+
+<p><a href="https://cxem.net/arduino/images/arduino275-23.jpg" rel="lightbox" target="_blank"><img alt="" src="./Часы из дисплея покупателя (VFD) v2_files/arduino275-23.jpg" title="Нажмите для увеличения"></a></p>
+
+<p>Печатная плата универсальна, позволяет устанавливать любые поддерживаемые дисплеи.&nbsp;Так как для питания используются решения на базе стандартных распространенных модулей DC-DC преобразователей, разводка сделана так, что можно установить модули преобразователей в сборе, либо запаять в виде набора отдельных компонентов. То же самое касается и часов на <strong>DS3231</strong>. При установке готовых модулей преобразователей рекомендуется заменить подстроечные резисторы на пары постоянных. Для <strong>LM2596 </strong>номиналы резисторов делителя 4,3кОм и 1кОм, для <strong>XL6009 </strong>30кОм и 1кОм соответственно. Ещё на модуле <strong>XL6009 </strong>желательно заменить диод на более высоковольтный. Там установлен <strong>SS34</strong>, на 3 ампера 40 вольт максимум, это близко к пределу напряжения, а запас по току&nbsp;для наших целей избыточен, поэтому рекомендуется заменить его на какой-нибудь более высоковольтный,&nbsp;вольт на 60, например,&nbsp;<strong>SK26 </strong>или что-то сходное по характеристикам. На плате разведены посадочные места под различные варианты кнопок, также есть выводы для подключения энкодера. Для подключения датчиков разведены штырьковые разъемы, для&nbsp;<strong>DS18B20</strong> также есть возможность использования гнезда под jack 3.5 мм. На плате&nbsp;имеются места для компонентов, не используемых в текущей реализации (EEPROM, IR-приемник), но&nbsp;возможно они будут использоваться в будущем, потому что проект развивается и постоянно дорабатывается.</p>
+
+<p>Сборку лучше начинать с монтажа компонентов или модулей DC-DC преобразователей, после их запуска и&nbsp;проверки всех напряжений&nbsp;уже можно запаивать дисплей, и плату Arduino (лучше установить в панельку). Датчик света необходимо располагать таким образом, чтобы на него не попадал свет экрана. Во время работы колба экрана нагревается, поэтому датчик&nbsp;<strong>BME280 </strong>лучше всего располагать на шлейфе либо снаружи корпуса устройства, либо где-нибудь внизу&nbsp;подальше от платы, напротив вентиляционного отверстия, чтобы минимизировать влияние нагрева экрана на показания температуры. Если же этого не удалось избежать на 100 процентов, то можно вручную скорректировать показания температуры в меню настроек.</p>
+
+<p>Пару слов о прошивке и о логике работы программы. В архиве будет как сама прошивка, так и необходимые библиотеки. Если какие-то из используемых библиотек уже установлены, рекомендуется удалить их и установить версии из архива. Прошивка разбита на пять файлов:&nbsp;три файла — это знакогенераторы для различных шрифтов (CharGen.h, CharGen_bold.h, CharGen_v.h, VFD.h), один с функциями управления колбами (VFD.h), и, собственно, главная логика программы (VFD_Clock_6Font.ino).&nbsp;&nbsp;</p>
+
+<p>После запуска первым делом программа пытается определить тип подключенного дисплея (путем определения количества разрядов регистра дисплея) функция&nbsp;Disp_detect(). В случае если дисплей не определен, программа мигает встроенным светодиодом и пищит однократно зуммером, и так до тех пор, пока дисплей не будет идентифицирован. После того, как дисплей обнаружен, происходит настройка прерывания (для работы функции&nbsp;output_DDRAM(), которая выводит данные из массива экранной памяти DDRAM&nbsp;на дисплей). Это позволяет поддерживать фиксированную частоту обновления экрана (100Гц). После определяется наличие модуля часов&nbsp;<strong>DS3231</strong>, как необходимого элемента для запуска с минимумом функций. Если он не обнаружен, на дисплей выводится сообщение "ОШИБКА СВЯЗИ С МОДУЛЕМ RTC DS3231".&nbsp;Далее, если это первый запуск, в EEPROM записываются дефолтные значения параметров (шрифты, яркость и т.д.), если не первый - они оттуда просто считываются. После чего происходит преднастройка АЦП, определение наличия датчиков <strong>BME280 </strong>и&nbsp;<strong>DS18B20,</strong>&nbsp;и, в случае их обнаружения, получение с них данных. В конце первоначальной настройки&nbsp;программа выдает три сигнала зуммера и переходит к выполнению основного кода.</p>
+
+<p>Еще один нюанс, для тех, кто захочет поэкспериментировать самостоятельно с подключением. Колба&nbsp;<strong>DN2029D</strong> имеет большее количество выводов, так как регистр анодов и сеток там разведены отдельно. Т.е. помимо стандартного набора управляющих пинов <strong>CLK, LAT, BLK, SI, SO </strong>есть еще выводы регистра сеток, которые маркируются также только с добавлением G (Grid) <strong>GCLK, GLAT, GBLK, GSI, GSO.</strong>&nbsp;Выводы&nbsp;<strong>CLK, LAT, BLK</strong> всегда соединяются попарно с соответствующими выводами регистра сеток, т.е.:&nbsp;<strong>CLK- GCLK, LAT&nbsp;- GLAT, BLK - GBLK.&nbsp;</strong>А входы и выходы регистров (<strong>SI, SO, GSI, GSO</strong>) можно подключить последовательно&nbsp;двумя способами:</p>
+
+<ol>
+	<li><strong>D8 -&gt;SI, SO-&gt;GSI, GSO-&gt;D12</strong></li>
+	<li><strong>D8 -&gt;GSI, GSO-&gt;SI, SO-&gt;D12</strong></li>
+</ol>
+
+<p>Т.е. в первом варианте первым включен регистр анодов, а за ним регистр сеток, а во втором - наоборот. В текущей версии печатной платы реализован первый вариант по умолчанию и в прошивке ничего менять не требуется, однако&nbsp;поддерживается также и второй вариант подключения, для его использования&nbsp;необходимо в строке:</p>
+
+<div><div id="highlighter_935948" class="syntaxhighlighter  cpp"><div class="toolbar"><span><a href="https://cxem.net/arduino/arduino275.php#" class="toolbar_item command_help help">?</a></span></div><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="cpp preprocessor">#define DN2029D_wiring 1 // 0 - данные на GSI, GSO соединён с SI, SO выход. 1 - данные на SI, SO соединён с GSI, GSO выход.</code></div></div></td></tr></tbody></table></div></div>
+
+<p>Заменить "1" на "0", как написано в комментарии.</p>
+
+<p>На этом все, для желающих глубже вникнуть в логику работы программы, исходный&nbsp;код структурирован и очень подробно прокомментирован.&nbsp;</p>
+
+<p>Для получения печатных плат обращаться к&nbsp;<strong><a href="https://cxem.net/profile/26634/">devICEpro</a>.</strong></p>
+
+<p>Еще немного фото вариантов оформления собранного готового устройства:</p>
+
+<p><img alt="" src="./Часы из дисплея покупателя (VFD) v2_files/arduino275-24.jpg"><img alt="" src="./Часы из дисплея покупателя (VFD) v2_files/arduino275-25.jpg"><img alt="" src="./Часы из дисплея покупателя (VFD) v2_files/arduino275-26.jpg"></p>
+
+<p><img alt="" src="./Часы из дисплея покупателя (VFD) v2_files/arduino275-27.jpg"><img alt="" src="./Часы из дисплея покупателя (VFD) v2_files/arduino275-28.jpg"><img alt="" src="./Часы из дисплея покупателя (VFD) v2_files/arduino275-29.jpg"><img alt="" src="./Часы из дисплея покупателя (VFD) v2_files/arduino275-30.jpg"><a href="https://cxem.net/arduino/images/arduino275-31.jpg" rel="lightbox" target="_blank"><img alt="" src="./Часы из дисплея покупателя (VFD) v2_files/arduino275-31.jpg" title="Нажмите для увеличения"></a></p>
+
+<p>Программа для генерации кодов символов (Coder_ZG):&nbsp;<strong>kackaqep</strong></p>
+
+<p>Вариант в дереве и металле: <strong>Владислав Касперович.</strong></p>
+
+<p>Шрифт Полужирный а-ля "Aliexpress": <strong>Владимир&nbsp;Коваленко.</strong></p>
+
+<p>Схемотехника, прошивка, печатная плата:&nbsp;<strong>&nbsp;<a href="https://cxem.net/profile/26634/">devICEpro</a>.</strong></p><div class="article-video">
+									<iframe width="420" height="315" src="./Часы из дисплея покупателя (VFD) v2_files/XVYgcgYN79E.html" frameborder="0" allowfullscreen=""></iframe>
+								</div><div style="font-weight: bold;"><h4>Прикрепленные файлы:</h4><ul><li><a href="https://cxem.net/ckfinder/userfiles/ab0421facda2f95a607fe08e9fcfffa0/files/VFD2/VFD_FOR_WEB.zip">VFD_FOR_WEB.zip</a> (3786 Кб)</li></ul></div><h4 class="tagh3">Теги:</h4><ul class="tags"><li>
+									<a class="ourtag" href="https://cxem.net/tags/VFD/" id="VFD">VFD</a>
+									<div class="subscribe" style="display: none;"></div>
+								</li><li>
+									<a class="ourtag" href="https://cxem.net/tags/%25D0%2592%25D0%259B%25D0%2598/" id="%25D0%2592%25D0%259B%25D0%2598">ВЛИ</a>
+									<div class="subscribe" style="display: none;"></div>
+								</li><li>
+									<a class="ourtag" href="https://cxem.net/tags/Arduino/" id="Arduino">Arduino</a>
+									<div class="subscribe" style="display: none;"></div>
+								</li><li>
+									<a class="ourtag" href="https://cxem.net/tags/%25D0%25A7%25D0%25B0%25D1%2581%25D1%258B/" id="%25D0%25A7%25D0%25B0%25D1%2581%25D1%258B">Часы</a>
+									<div class="subscribe" style="display: none;"></div>
+								</li><li>
+									<a class="ourtag" href="https://cxem.net/tags/%25D0%259C%25D0%25B8%25D0%25BA%25D1%2580%25D0%25BE%25D0%25BA%25D0%25BE%25D0%25BD%25D1%2582%25D1%2580%25D0%25BE%25D0%25BB%25D0%25BB%25D0%25B5%25D1%2580/" id="%25D0%259C%25D0%25B8%25D0%25BA%25D1%2580%25D0%25BE%25D0%25BA%25D0%25BE%25D0%25BD%25D1%2582%25D1%2580%25D0%25BE%25D0%25BB%25D0%25BB%25D0%25B5%25D1%2580">Микроконтроллер</a>
+									<div class="subscribe" style="display: none;"></div>
+								</li><li>
+									<a class="ourtag" href="https://cxem.net/tags/LCD/" id="LCD">LCD</a>
+									<div class="subscribe" style="display: none;"></div>
+								</li><li>
+									<a class="ourtag" href="https://cxem.net/tags/Sprint-Layout/" id="Sprint-Layout">Sprint-Layout</a>
+									<div class="subscribe" style="display: none;"></div>
+								</li></ul>
+</div>
+
+
+
+<div class="articlebottom">
+	<div style="float: left;">
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/mode_author.png" title="Автор статьи"> <strong><a href="https://cxem.net/profile/22479" rel="author">AMatroskin</a></strong>
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/mode_public.png" title="Дата публикации статьи"> Опубликована: <time pubdate="" datetime="2022-12-10">10.12.2022</time>
+		
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/mode_comment.png" title="Количество комментариев"> <span id="count_comments">46</span>
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/mode_favorite.png" id="favArticle" title="Подписаться на статью"> <span class="subscribedCount">4</span>	</div>
+
+	<div style="float: right; margin-right: 15px;">
+					<span class="getpdf"><a href="https://cxem.net/getPDF.php?id=6773" title="Получить PDF-версию статьи"><img src="./Часы из дисплея покупателя (VFD) v2_files/getpdf.png" srcset="/images/icons/getpdf.png 1x, /images/icons/getpdf_2x.png 2x"></a></span>
+				<span id="donate"><img src="./Часы из дисплея покупателя (VFD) v2_files/mode_donate.png" title="Вознаградить автора статьи"> Вознаградить</span>
+
+		
+		<a id="buildadd" href="https://cxem.net/arduino/arduino275.php#" title="Написать про результат своей сборки">Я собрал</a>
+				<span id="buildcount" title="Количество сборок других пользователей">0</span>
+				
+		
+
+		<span title="Средний балл статьи: 5" id="arating" style="height: 15.181818181818px; background-position: 0 0px;"></span><span style="color: rgba(255, 255, 255, .5); padding: 0 10px 0 15px;" title="Количество оценивших статью: 1">1</span><div class="arating" style="display: none;">
+									<div class="close">x</div><h3 style="margin: 0; text-align: center;">Оценить статью</h3><ul class="rating"><li><span class="criterion">Техническая грамотность</span><div class="votes" data-id="1" data-weight="1"><ul><li class="vote" data-value="1"></li><li class="vote" data-value="2"></li><li class="vote" data-value="3"></li><li class="vote" data-value="4"></li><li class="vote" data-value="5"></li></ul></div></li><li><span class="criterion">Актуальность материала</span><div class="votes" data-id="2" data-weight="0.8"><ul><li class="vote" data-value="1"></li><li class="vote" data-value="2"></li><li class="vote" data-value="3"></li><li class="vote" data-value="4"></li><li class="vote" data-value="5"></li></ul></div></li><li><span class="criterion">Изложение материала</span><div class="votes" data-id="3" data-weight="0.6"><ul><li class="vote" data-value="1"></li><li class="vote" data-value="2"></li><li class="vote" data-value="3"></li><li class="vote" data-value="4"></li><li class="vote" data-value="5"></li></ul></div></li><li><span class="criterion">Полезность устройства	</span><div class="votes" data-id="4" data-weight="0.4"><ul><li class="vote" data-value="1"></li><li class="vote" data-value="2"></li><li class="vote" data-value="3"></li><li class="vote" data-value="4"></li><li class="vote" data-value="5"></li></ul></div></li><li><span class="criterion">Повторяемость устройства</span><div class="votes" data-id="5" data-weight="0.3"><ul><li class="vote" data-value="1"></li><li class="vote" data-value="2"></li><li class="vote" data-value="3"></li><li class="vote" data-value="4"></li><li class="vote" data-value="5"></li></ul></div></li><li><span class="criterion">Орфография</span><div class="votes" data-id="6" data-weight="0.2"><ul><li class="vote" data-value="1"></li><li class="vote" data-value="2"></li><li class="vote" data-value="3"></li><li class="vote" data-value="4"></li><li class="vote" data-value="5"></li></ul></div></li></ul><div class="result-rating">0</div><div class="additional" style="clear: both;"><div style="text-align: center; padding-top: 5px;"><textarea id="addittext" style="width: 290px; font-size: 11px; resize: vertical;" maxlength="255" rows="3" placeholder="Напишите пару слов о недостатках или достоинствах статьи. В дальнейшем Вы не сможете изменить свою оценку!"></textarea></div><div id="buttons" style="text-align: center; margin: 0;">
+										<button type="button" class="button-ok" id="dorating" style="font-size: 11px;">Оценить</button>
+										<button type="button" class="button-ok" id="resetrating" style="font-size: 11px;">Сбросить</button>
+									</div></div><p style="margin: 0; line-height: normal; color: #bbb;">
+									<span>Средний балл статьи: 5</span>
+									<span style="float: right;">Проголосовало: 1 чел.</span>
+								</p></div>	</div>
+</div>
+
+
+<div id="product_anti_ad_bottom"></div>
+
+
+
+
+<link rel="stylesheet" href="./Часы из дисплея покупателя (VFD) v2_files/comments.css">
+
+<div align="left" style="margin: 25px 0;" id="ydi_cxem_bottom1"></div>
+
+
+<div style="margin: 20px 0 25px 0;">
+	<div class="addthis_toolbox addthis_default_style addthis_16x16_style">
+	<a class="addthis_button_vk"></a>
+	<a class="addthis_button_odnoklassniki_ru"></a>
+	<a class="addthis_button_mymailru"></a>
+	<a class="addthis_button_compact"></a><a class="addthis_counter addthis_bubble_style"></a>
+	</div>
+	<script type="text/javascript" src="./Часы из дисплея покупателя (VFD) v2_files/addthis_widget.js.Без названия"></script>
+</div>
+
+</div>
+
+<div align="center" style="padding: 10px; color: #666666; font-size: 12px">
+	
+<!-- SAPE RTB JS -->
+<script async="async" src="./Часы из дисплея покупателя (VFD) v2_files/32852.js.Без названия" type="text/javascript">
+</script>
+<!-- SAPE RTB END --></div>
+
+<div>
+
+<script>
+	var countComments = 46;
+	var maxFileSize = 16777216;
+</script>
+<script type="text/javascript" src="./Часы из дисплея покупателя (VFD) v2_files/jquery.caret.1.02.min.js.Без названия"></script>
+<script type="text/javascript" src="./Часы из дисплея покупателя (VFD) v2_files/comments.js.Без названия"></script>
+
+<div id="comments">
+	
+	<h3>
+		<span id="loadComments" class="select">Комментарии (46)</span> <a href="https://cxem.net/rss_comments.php?rss_url=/arduino/arduino275.php"><img src="./Часы из дисплея покупателя (VFD) v2_files/rss_18.png" border="0"></a> |
+					<span id="loadBuilds" data-id="6773" class="select"> Я собрал (<span id="hbuildcount">0</span>)</span> |
+		
+
+		
+		<span id="subarea" style="position:relative;">
+			<span class="select" id="favArticleBottom">Подписаться</span>
+						<div class="subscribeEmail" style="position:absolute; width: 310px; text-align: center; z-index: 110; font-size: 12px;display: none; box-shadow: 0 0 10px #444; padding: 10px; background: #fff; bottom: 100%; margin-bottom: 10px; left: -20%;">
+				<input type="email" id="subscribeEmail" placeholder="E-mail для подписки"> <button class="button-ok" id="acceptEmailSubscription" type="button">OK</button>
+			</div>
+					</span>
+	</h3>
+
+			<div id="buildslist" style="background: #fff; padding: 10px; display: none;"></div>
+
+		<div id="builds_form" style="background: #fff; display: none; padding: 10px 15px; max-width: 800px; margin: 10px auto; border: 1px solid #B6B6B6; border-radius: 5px; box-shadow: 0 0 5px 0 #444">
+
+							<p class="text-center">Для добавления Вашей сборки необходима <a href="https://cxem.net/cms/registration/">регистрация</a></p>
+					</div>
+	
+
+	<div id="commentslist">
+		<a name="comment-86367"></a>
+<div style="margin-left: 0px;" class="comment86367 comment" id="86367">
+	<div class="elements">
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: gray">0</span></span>
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Часы из дисплея покупателя (VFD) v2_files/notuser.png" width="48"></div>
+	<div class="com_content">
+		<div class="title">Публикатор <span class="date"><time pubdate="" datetime="2022-12-10T10:01:21+03:00">10.12.2022 10:01</time></span> <a href="https://cxem.net/arduino/arduino275.php#comment-86367" rel="nofollow">#</a></div>
+		<div class="text">На форуме автоматически создана <a href="http://forum.cxem.net/index.php?showtopic=252842" title="Ссылка на http://forum.cxem.net/index.php?showtopic=252842">тема для обсуждения статьи</a>.</div>
+		
+		
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-86369"></a>
+<div style="margin-left: 0px;" class="comment86369 comment" id="86369">
+	<div class="elements">
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: green">+2</span></span>
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Часы из дисплея покупателя (VFD) v2_files/394de05eb54380d1220dd836ddaed034_48.jpg" width="48"></div>
+	<div class="com_content">
+		<div class="title"><a href="https://cxem.net/cms/profile/26634/">devICEpro</a> <span class="date"><time pubdate="" datetime="2022-12-10T12:50:06+03:00">10.12.2022 12:50</time></span> <a href="https://cxem.net/arduino/arduino275.php#comment-86369" rel="nofollow">#</a></div>
+		<div class="text">Огромная благодарность <a href="https://cxem.net/arduino/arduino275.php" title="Ссылка на ">AMatroskin</a> за подробное освещение этого проекта, а также всем, кто принимал участие и вносил свою лепту. Думаю что многим это будет интересно.</div>
+		<div class="commentchange">Отредактирован 10.12.2022 12:52</div>
+		
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-86377"></a>
+<div style="margin-left: 0px;" class="comment86377 comment" id="86377">
+	<div class="elements">
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: green">+1</span></span>
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Часы из дисплея покупателя (VFD) v2_files/0ae3de1b00cbdbfbd4586eb67bd4eef2_48.jpg" width="48"></div>
+	<div class="com_content">
+		<div class="title"><a href="https://cxem.net/cms/profile/7317/">111284</a> <span class="date"><time pubdate="" datetime="2022-12-12T09:30:32+03:00">12.12.2022 09:30</time></span> <a href="https://cxem.net/arduino/arduino275.php#comment-86377" rel="nofollow">#</a></div>
+		<div class="text">Классные часики получились</div>
+		
+		
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-86379"></a>
+<div style="margin-left: 0px;" class="comment86379 comment" id="86379">
+	<div class="elements">
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: gray">0</span></span>
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Часы из дисплея покупателя (VFD) v2_files/noavatar_48.png" width="48"></div>
+	<div class="com_content">
+		<div class="title"><a href="https://cxem.net/cms/profile/22917/">shuichik</a> <span class="date"><time pubdate="" datetime="2022-12-12T11:16:30+03:00">12.12.2022 11:16</time></span> <a href="https://cxem.net/arduino/arduino275.php#comment-86379" rel="nofollow">#</a></div>
+		<div class="text"><a href="https://cxem.net/partinfo.php?s=66&amp;i=84" title="Просмотр параметров элемента max17602 [в новом окне]" target="_blank">max17602</a> крайне недоставабельна...</div>
+		<div class="commentchange">Отредактирован 12.12.2022 11:18</div>
+		
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-86383"></a>
+<div style="margin-left: 20px;" class="comment86383 comment" id="86383">
+	<div class="elements">
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: gray">0</span></span>
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Часы из дисплея покупателя (VFD) v2_files/394de05eb54380d1220dd836ddaed034_48.jpg" width="48"></div>
+	<div class="com_content">
+		<div class="title"><a href="https://cxem.net/cms/profile/26634/">devICEpro</a> <span class="date"><time pubdate="" datetime="2022-12-12T18:26:41+03:00">12.12.2022 18:26</time></span> <a href="https://cxem.net/arduino/arduino275.php#comment-86383" rel="nofollow">#</a></div>
+		<div class="text"><a href="https://www.chipdip.ru/product0/8432829242" title="Ссылка на https://www.chipdip.ru/product0/8432829242">https://www.chipdip.ru/product0/8432829242</a> А другие там не работают. UCC27325 сразу нагревается. Так что альтернатива пока не найдена</div>
+		
+		
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-86384"></a>
+<div style="margin-left: 20px;" class="comment86384 comment" id="86384">
+	<div class="elements">
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: gray">0</span></span>
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Часы из дисплея покупателя (VFD) v2_files/4d8d191a44680473e8dee9ca8aa28146_48.jpg" width="48"><br>[Автор]</div>
+	<div class="com_content">
+		<div class="title"><a href="https://cxem.net/cms/profile/22479/">AMatroskin</a> <span class="date"><time pubdate="" datetime="2022-12-12T23:42:56+03:00">12.12.2022 23:42</time></span> <a href="https://cxem.net/arduino/arduino275.php#comment-86384" rel="nofollow">#</a></div>
+		<div class="text">Да не самая распространенная микруха, но вариантов не то что бы много, может подскажите если знаете что то более распространенное и подходящее?</div>
+		
+		
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-87103"></a>
+<div style="margin-left: 20px;" class="comment87103 comment" id="87103">
+	<div class="elements">
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: gray">0</span></span>
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Часы из дисплея покупателя (VFD) v2_files/noavatar_48.png" width="48"></div>
+	<div class="com_content">
+		<div class="title"><a href="https://cxem.net/cms/profile/27024/">marges</a> <span class="date"><time pubdate="" datetime="2023-03-14T12:30:21+03:00">14.03.2023 12:30</time></span> <a href="https://cxem.net/arduino/arduino275.php#comment-87103" rel="nofollow">#</a></div>
+		<div class="text">А в железяках Б/У не встречается?</div>
+		
+		
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-86390"></a>
+<div style="margin-left: 0px;" class="comment86390 comment" id="86390">
+	<div class="elements">
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: green">+1</span></span>
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Часы из дисплея покупателя (VFD) v2_files/noavatar_48.png" width="48"></div>
+	<div class="com_content">
+		<div class="title"><a href="https://cxem.net/cms/profile/14931/">_abk_</a> <span class="date"><time pubdate="" datetime="2022-12-14T08:07:47+03:00">14.12.2022 08:07</time></span> <a href="https://cxem.net/arduino/arduino275.php#comment-86390" rel="nofollow">#</a></div>
+		<div class="text">Хорошая работа проделана. А оформление просто блеск! Заодно проект демонстрирует наглядно, что, как ни выворачивайся, дисплей будет нормально отображать только две строки стандартных символов. Читабельность всего остального посредственная. Как ни крути.</div>
+		
+		
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-86391"></a>
+<div style="margin-left: 20px;" class="comment86391 comment" id="86391">
+	<div class="elements">
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: gray">0</span></span>
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Часы из дисплея покупателя (VFD) v2_files/4d8d191a44680473e8dee9ca8aa28146_48.jpg" width="48"><br>[Автор]</div>
+	<div class="com_content">
+		<div class="title"><a href="https://cxem.net/cms/profile/22479/">AMatroskin</a> <span class="date"><time pubdate="" datetime="2022-12-14T09:39:53+03:00">14.12.2022 09:39</time></span> <a href="https://cxem.net/arduino/arduino275.php#comment-86391" rel="nofollow">#</a></div>
+		<div class="text">Спасибо! Большие цифры часов считываюся замечательно, а остальное скорей как дополнение к основному функционалу, ведь это просто часы.</div>
+		
+		
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-86411"></a>
+<div style="margin-left: 0px;" class="comment86411 comment" id="86411">
+	<div class="elements">
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: green">+1</span></span>
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Часы из дисплея покупателя (VFD) v2_files/notuser.png" width="48"></div>
+	<div class="com_content">
+		<div class="title">Sergey <span class="date"><time pubdate="" datetime="2022-12-19T18:21:11+03:00">19.12.2022 18:21</time></span> <a href="https://cxem.net/arduino/arduino275.php#comment-86411" rel="nofollow">#</a></div>
+		<div class="text">Подскажите в каких устройствах применяется такой дисплей?</div>
+		
+		
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-86417"></a>
+<div style="margin-left: 20px;" class="comment86417 comment" id="86417">
+	<div class="elements">
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: gray">0</span></span>
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Часы из дисплея покупателя (VFD) v2_files/4d8d191a44680473e8dee9ca8aa28146_48.jpg" width="48"><br>[Автор]</div>
+	<div class="com_content">
+		<div class="title"><a href="https://cxem.net/cms/profile/22479/">AMatroskin</a> <span class="date"><time pubdate="" datetime="2022-12-20T21:36:53+03:00">20.12.2022 21:36</time></span> <a href="https://cxem.net/arduino/arduino275.php#comment-86417" rel="nofollow">#</a></div>
+		<div class="text">Можно найти по словосочетанию "Дисплей покупателя", стоит почти в любом продуктовом магазине на кассе.</div>
+		
+		
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-86427"></a>
+<div style="margin-left: 40px;" class="comment86427 comment" id="86427">
+	<div class="elements">
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: green">+1</span></span>
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Часы из дисплея покупателя (VFD) v2_files/notuser.png" width="48"></div>
+	<div class="com_content">
+		<div class="title">Sergey <span class="date"><time pubdate="" datetime="2022-12-21T20:47:26+03:00">21.12.2022 20:47</time></span> <a href="https://cxem.net/arduino/arduino275.php#comment-86427" rel="nofollow">#</a></div>
+		<div class="text">У меня есть дисплеи, но они совсем другие. Поэтому и спросил где брать именно такие и в каких "Дисплеях покупателей" они стоят. А если курочить все подряд в магазинах, то могут не понять</div>
+		
+		
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-86441"></a>
+<div style="margin-left: 60px;" class="comment86441 comment" id="86441">
+	<div class="elements">
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: gray">0</span></span>
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Часы из дисплея покупателя (VFD) v2_files/394de05eb54380d1220dd836ddaed034_48.jpg" width="48"></div>
+	<div class="com_content">
+		<div class="title"><a href="https://cxem.net/cms/profile/26634/">devICEpro</a> <span class="date"><time pubdate="" datetime="2022-12-22T21:15:41+03:00">22.12.2022 21:15</time></span> <a href="https://cxem.net/arduino/arduino275.php#comment-86441" rel="nofollow">#</a></div>
+		<div class="text">Firich VF2029, Kraftway/Puritron ICD2002, POSLAB PL-200, GIGATECH DSP850-855. Да ещё много каких. Posiflex, Posua. Смотреть фото надо. Не подходят Samsung и Datecs,это точно.</div>
+		
+		
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-86447"></a>
+<div style="margin-left: 0px;" class="comment86447 comment" id="86447">
+	<div class="elements">
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: green">+1</span></span>
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Часы из дисплея покупателя (VFD) v2_files/394de05eb54380d1220dd836ddaed034_48.jpg" width="48"></div>
+	<div class="com_content">
+		<div class="title"><a href="https://cxem.net/cms/profile/26634/">devICEpro</a> <span class="date"><time pubdate="" datetime="2022-12-23T21:27:02+03:00">23.12.2022 21:27</time></span> <a href="https://cxem.net/arduino/arduino275.php#comment-86447" rel="nofollow">#</a></div>
+		<div class="text">Ещё вариант оформления. Безрамочный дизайн, 3D печать. Доступно к заказу</div>
+		<div class="commentchange">Отредактирован 23.12.2022 21:32</div>
+		<div><b>Прикрепленный файл:</b> <a href="https://cxem.net/ckfinder/userfiles/comments/86447_photo_2022-12-07_20-49-02%20(2).jpg">photo_2022-12-07_20-49-02 (2).jpg</a></div><div><b>Прикрепленный файл:</b> <a href="https://cxem.net/ckfinder/userfiles/comments/86447_photo_2022-12-07_20-49-02.jpg">photo_2022-12-07_20-49-02.jpg</a></div><div><b>Прикрепленный файл:</b> <a href="https://cxem.net/ckfinder/userfiles/comments/86447_photo_2022-12-23_22-24-28.jpg">photo_2022-12-23_22-24-28.jpg</a></div>
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-86448"></a>
+<div style="margin-left: 0px;" class="comment86448 comment" id="86448">
+	<div class="elements">
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: gray">0</span></span>
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Часы из дисплея покупателя (VFD) v2_files/notuser.png" width="48"></div>
+	<div class="com_content">
+		<div class="title">Олег <span class="date"><time pubdate="" datetime="2022-12-24T14:02:45+03:00">24.12.2022 14:02</time></span> <a href="https://cxem.net/arduino/arduino275.php#comment-86448" rel="nofollow">#</a></div>
+		<div class="text">Добрый день. А файл платы доступен или только в продаже готовая плата?</div>
+		
+		
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-86463"></a>
+<div style="margin-left: 20px;" class="comment86463 comment" id="86463">
+	<div class="elements">
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: gray">0</span></span>
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Часы из дисплея покупателя (VFD) v2_files/394de05eb54380d1220dd836ddaed034_48.jpg" width="48"></div>
+	<div class="com_content">
+		<div class="title"><a href="https://cxem.net/cms/profile/26634/">devICEpro</a> <span class="date"><time pubdate="" datetime="2022-12-26T19:54:01+03:00">26.12.2022 19:54</time></span> <a href="https://cxem.net/arduino/arduino275.php#comment-86463" rel="nofollow">#</a></div>
+		<div class="text">Платы заводского изготовления, по одной никто делать не будет. Для технологии ЛУТ слишком трудоёмко. Партия плат в пути, скоро можно будет купить. Файл платы пока не выкладываю, на то есть причины.</div>
+		
+		
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-86631"></a>
+<div style="margin-left: 40px;" class="comment86631 comment" id="86631">
+	<div class="elements">
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: gray">0</span></span>
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Часы из дисплея покупателя (VFD) v2_files/notuser.png" width="48"></div>
+	<div class="com_content">
+		<div class="title">Sergey <span class="date"><time pubdate="" datetime="2023-01-14T19:12:36+03:00">14.01.2023 19:12</time></span> <a href="https://cxem.net/arduino/arduino275.php#comment-86631" rel="nofollow">#</a></div>
+		<div class="text">Как можно зарезервирорвать платку?</div>
+		
+		
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-86632"></a>
+<div style="margin-left: 0px;" class="comment86632 comment" id="86632">
+	<div class="elements">
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: gray">0</span></span>
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Часы из дисплея покупателя (VFD) v2_files/notuser.png" width="48"></div>
+	<div class="com_content">
+		<div class="title">Sergey <span class="date"><time pubdate="" datetime="2023-01-14T19:13:49+03:00">14.01.2023 19:13</time></span> <a href="https://cxem.net/arduino/arduino275.php#comment-86632" rel="nofollow">#</a></div>
+		<div class="text">Я бы попробовал сделать по ЛУТ технологии!</div>
+		
+		
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-86648"></a>
+<div style="margin-left: 20px;" class="comment86648 comment" id="86648">
+	<div class="elements">
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: gray">0</span></span>
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Часы из дисплея покупателя (VFD) v2_files/394de05eb54380d1220dd836ddaed034_48.jpg" width="48"></div>
+	<div class="com_content">
+		<div class="title"><a href="https://cxem.net/cms/profile/26634/">devICEpro</a> <span class="date"><time pubdate="" datetime="2023-01-15T21:21:29+03:00">15.01.2023 21:21</time></span> <a href="https://cxem.net/arduino/arduino275.php#comment-86648" rel="nofollow">#</a></div>
+		<div class="text">Сделать можно, вся проблема в куче проходных отверстий с металлизацией. В домашних условиях проблематично. За готовыми платами в личку.</div>
+		
+		<div><b>Прикрепленный файл:</b> <a href="https://cxem.net/ckfinder/userfiles/comments/86648_photo_2023-01-15_22-20-45.jpg">photo_2023-01-15_22-20-45.jpg</a></div>
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-86650"></a>
+<div style="margin-left: 0px;" class="comment86650 comment" id="86650">
+	<div class="elements">
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: gray">0</span></span>
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Часы из дисплея покупателя (VFD) v2_files/394de05eb54380d1220dd836ddaed034_48.jpg" width="48"></div>
+	<div class="com_content">
+		<div class="title"><a href="https://cxem.net/cms/profile/26634/">devICEpro</a> <span class="date"><time pubdate="" datetime="2023-01-15T21:59:53+03:00">15.01.2023 21:59</time></span> <a href="https://cxem.net/arduino/arduino275.php#comment-86650" rel="nofollow">#</a></div>
+		<div class="text">Можно вообще с изготовлением платы не заморачиваться, а использовать родную плату дисплея, с его родной схемой питания. Только изолировать сигнальные выводы колбы от контроллера, и припаять 5 проводов к ардуино. Здесь всё индивидуально, дисплеев превеликая куча разных вариантов. Если кого интересует такой вариант, пишите в форум, помогу разобраться что куда паять</div>
+		
+		
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-86685"></a>
+<div style="margin-left: 0px;" class="comment86685 comment" id="86685">
+	<div class="elements">
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: gray">0</span></span>
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Часы из дисплея покупателя (VFD) v2_files/notuser.png" width="48"></div>
+	<div class="com_content">
+		<div class="title">Krohovich <span class="date"><time pubdate="" datetime="2023-01-19T13:44:24+03:00">19.01.2023 13:44</time></span> <a href="https://cxem.net/arduino/arduino275.php#comment-86685" rel="nofollow">#</a></div>
+		<div class="text">У меня такой дисплей имеется: M202MD15FA. С HD44780 интерфейсом. Можно ли такой приспособить ?</div>
+		
+		
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-86687"></a>
+<div style="margin-left: 20px;" class="comment86687 comment" id="86687">
+	<div class="elements">
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: gray">0</span></span>
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Часы из дисплея покупателя (VFD) v2_files/4d8d191a44680473e8dee9ca8aa28146_48.jpg" width="48"><br>[Автор]</div>
+	<div class="com_content">
+		<div class="title"><a href="https://cxem.net/cms/profile/22479/">AMatroskin</a> <span class="date"><time pubdate="" datetime="2023-01-19T19:08:58+03:00">19.01.2023 19:08</time></span> <a href="https://cxem.net/arduino/arduino275.php#comment-86687" rel="nofollow">#</a></div>
+		<div class="text">Боюсь что нет, у вас совсем другой дисплей, без внутренней логики, а в статье речь идёт о дисплеях с таковой на борту (технология chip on glass COG), вашим дисплеем логичнее всего управлять стандартным способом через hd44780.</div>
+		
+		
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-86692"></a>
+<div style="margin-left: 40px;" class="comment86692 comment" id="86692">
+	<div class="elements">
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: gray">0</span></span>
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Часы из дисплея покупателя (VFD) v2_files/notuser.png" width="48"></div>
+	<div class="com_content">
+		<div class="title">Krohovich <span class="date"><time pubdate="" datetime="2023-01-19T21:15:28+03:00">19.01.2023 21:15</time></span> <a href="https://cxem.net/arduino/arduino275.php#comment-86692" rel="nofollow">#</a></div>
+		<div class="text">Понятно, такой возможно достать, но это кажись тоже не то.</div>
+		
+		<div><b>Прикрепленный файл:</b> <a href="https://cxem.net/ckfinder/userfiles/comments/86692_20x2.jpg">20x2.jpg</a></div>
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-86693"></a>
+<div style="margin-left: 60px;" class="comment86693 comment" id="86693">
+	<div class="elements">
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: gray">0</span></span>
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Часы из дисплея покупателя (VFD) v2_files/notuser.png" width="48"></div>
+	<div class="com_content">
+		<div class="title">Krohovich <span class="date"><time pubdate="" datetime="2023-01-19T21:18:20+03:00">19.01.2023 21:18</time></span> <a href="https://cxem.net/arduino/arduino275.php#comment-86693" rel="nofollow">#</a></div>
+		<div class="text">У него как у 202MD25GINK стекляшка.</div>
+		
+		
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-86694"></a>
+<div style="margin-left: 80px;" class="comment86694 comment" id="86694">
+	<div class="elements">
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: green">+1</span></span>
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Часы из дисплея покупателя (VFD) v2_files/notuser.png" width="48"></div>
+	<div class="com_content">
+		<div class="title">Krohovich <span class="date"><time pubdate="" datetime="2023-01-19T21:31:41+03:00">19.01.2023 21:31</time></span> <a href="https://cxem.net/arduino/arduino275.php#comment-86694" rel="nofollow">#</a></div>
+		<div class="text">Ай, короче вот такие они.<br>
+Только что прислали весь вид ни них.</div>
+		
+		<div><b>Прикрепленный файл:</b> <a href="https://cxem.net/ckfinder/userfiles/comments/86694_1.jpg">1.jpg</a></div><div><b>Прикрепленный файл:</b> <a href="https://cxem.net/ckfinder/userfiles/comments/86694_2.jpg">2.jpg</a></div>
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-86700"></a>
+<div style="margin-left: 100px;" class="comment86700 comment" id="86700">
+	<div class="elements">
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: gray">0</span></span>
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Часы из дисплея покупателя (VFD) v2_files/4d8d191a44680473e8dee9ca8aa28146_48.jpg" width="48"><br>[Автор]</div>
+	<div class="com_content">
+		<div class="title"><a href="https://cxem.net/cms/profile/22479/">AMatroskin</a> <span class="date"><time pubdate="" datetime="2023-01-20T19:07:17+03:00">20.01.2023 19:07</time></span> <a href="https://cxem.net/arduino/arduino275.php#comment-86700" rel="nofollow">#</a></div>
+		<div class="text">Это другое дело, похоже на колбу dn2029d точно можно посмотреть на задней с стороне колбы, обычно маркировка там находится.</div>
+		
+		
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-86701"></a>
+<div style="margin-left: 80px;" class="comment86701 comment" id="86701">
+	<div class="elements">
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: gray">0</span></span>
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Часы из дисплея покупателя (VFD) v2_files/4d8d191a44680473e8dee9ca8aa28146_48.jpg" width="48"><br>[Автор]</div>
+	<div class="com_content">
+		<div class="title"><a href="https://cxem.net/cms/profile/22479/">AMatroskin</a> <span class="date"><time pubdate="" datetime="2023-01-20T19:09:13+03:00">20.01.2023 19:09</time></span> <a href="https://cxem.net/arduino/arduino275.php#comment-86701" rel="nofollow">#</a></div>
+		<div class="text">Да, скорей всего это dn2029d</div>
+		
+		
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-86732"></a>
+<div style="margin-left: 100px;" class="comment86732 comment" id="86732">
+	<div class="elements">
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: gray">0</span></span>
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Часы из дисплея покупателя (VFD) v2_files/notuser.png" width="48"></div>
+	<div class="com_content">
+		<div class="title">Krohovich <span class="date"><time pubdate="" datetime="2023-01-25T10:39:31+03:00">25.01.2023 10:39</time></span> <a href="https://cxem.net/arduino/arduino275.php#comment-86732" rel="nofollow">#</a></div>
+		<div class="text">Вот вид поближе на выводы индикатора.</div>
+		
+		<div><b>Прикрепленный файл:</b> <a href="https://cxem.net/ckfinder/userfiles/comments/86732_2029.jpg">2029.jpg</a></div>
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-86735"></a>
+<div style="margin-left: 120px;" class="comment86735 comment" id="86735">
+	<div class="elements">
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: gray">0</span></span>
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Часы из дисплея покупателя (VFD) v2_files/4d8d191a44680473e8dee9ca8aa28146_48.jpg" width="48"><br>[Автор]</div>
+	<div class="com_content">
+		<div class="title"><a href="https://cxem.net/cms/profile/22479/">AMatroskin</a> <span class="date"><time pubdate="" datetime="2023-01-25T12:03:32+03:00">25.01.2023 12:03</time></span> <a href="https://cxem.net/arduino/arduino275.php#comment-86735" rel="nofollow">#</a></div>
+		<div class="text">Да, скорей всего он и есть, если есть сомнения, можно проверить использую материалы <a href="https://cxem.net/mc/mc503.php" title="Ссылка на https://cxem.net/mc/mc503.php">вот этой статьи</a>, нужен только ESP32, паяльник и немного энтузиазма</div>
+		
+		
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-86739"></a>
+<div style="margin-left: 120px;" class="comment86739 comment" id="86739">
+	<div class="elements">
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: gray">0</span></span>
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Часы из дисплея покупателя (VFD) v2_files/394de05eb54380d1220dd836ddaed034_48.jpg" width="48"></div>
+	<div class="com_content">
+		<div class="title"><a href="https://cxem.net/cms/profile/26634/">devICEpro</a> <span class="date"><time pubdate="" datetime="2023-01-25T17:02:01+03:00">25.01.2023 17:02</time></span> <a href="https://cxem.net/arduino/arduino275.php#comment-86739" rel="nofollow">#</a></div>
+		<div class="text">Точно он, без сомнений.<br>
+А ещё попался необычный DN2029D, без геттера снизу колбы.</div>
+		<div class="commentchange">Отредактирован 25.01.2023 17:08</div>
+		<div><b>Прикрепленный файл:</b> <a href="https://cxem.net/ckfinder/userfiles/comments/86739_DISPLAYS.jpg">DISPLAYS.jpg</a></div><div><b>Прикрепленный файл:</b> <a href="https://cxem.net/ckfinder/userfiles/comments/86739_DN2029-1.jpg">DN2029-1.jpg</a></div>
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-86734"></a>
+<div style="margin-left: 100px;" class="comment86734 comment" id="86734">
+	<div class="elements">
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: gray">0</span></span>
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Часы из дисплея покупателя (VFD) v2_files/notuser.png" width="48"></div>
+	<div class="com_content">
+		<div class="title">Krohovich <span class="date"><time pubdate="" datetime="2023-01-25T11:48:18+03:00">25.01.2023 11:48</time></span> <a href="https://cxem.net/arduino/arduino275.php#comment-86734" rel="nofollow">#</a></div>
+		<div class="text">И такой.<br>
+Какой лучше ?</div>
+		
+		<div><b>Прикрепленный файл:</b> <a href="https://cxem.net/ckfinder/userfiles/comments/86734_2029-1.jpg">2029-1.jpg</a></div>
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-86750"></a>
+<div style="margin-left: 120px;" class="comment86750 comment" id="86750">
+	<div class="elements">
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: gray">0</span></span>
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Часы из дисплея покупателя (VFD) v2_files/4d8d191a44680473e8dee9ca8aa28146_48.jpg" width="48"><br>[Автор]</div>
+	<div class="com_content">
+		<div class="title"><a href="https://cxem.net/cms/profile/22479/">AMatroskin</a> <span class="date"><time pubdate="" datetime="2023-01-26T11:33:16+03:00">26.01.2023 11:33</time></span> <a href="https://cxem.net/arduino/arduino275.php#comment-86750" rel="nofollow">#</a></div>
+		<div class="text">Без разницы, колбы одинаковые. Если есть возможность запустить то можно просто посмотреть какая ярче и меньше изношена.</div>
+		
+		
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-86765"></a>
+<div style="margin-left: 0px;" class="comment86765 comment" id="86765">
+	<div class="elements">
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: green">+1</span></span>
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Часы из дисплея покупателя (VFD) v2_files/394de05eb54380d1220dd836ddaed034_48.jpg" width="48"></div>
+	<div class="com_content">
+		<div class="title"><a href="https://cxem.net/cms/profile/26634/">devICEpro</a> <span class="date"><time pubdate="" datetime="2023-01-27T22:35:38+03:00">27.01.2023 22:35</time></span> <a href="https://cxem.net/arduino/arduino275.php#comment-86765" rel="nofollow">#</a></div>
+		<div class="text">Последние доработки схемы и платы <a href="https://forum.cxem.net/index.php?/topic/252842-%D1%87%D0%B0%D1%81%D1%8B-%D0%B8%D0%B7-%D0%B4%D0%B8%D1%81%D0%BF%D0%BB%D0%B5%D1%8F-%D0%BF%D0%BE%D0%BA%D1%83%D0%BF%D0%B0%D1%82%D0%B5%D0%BB%D1%8F-vfd-v2/" title="Ссылка на https://forum.cxem.net/index.php?/topic/252842-%D1%87%D0%B0%D1%81%D1%8B-%D0%B8%D0%B7-%D0%B4%D0%B8%D1%81%D0%BF%D0%BB%D0%B5%D1%8F-%D0%BF%D0%BE%D0%BA%D1%83%D0%BF%D0%B0%D1%82%D0%B5%D0%BB%D1%8F-vfd-v2/">на форуме</a></div>
+		
+		
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-86770"></a>
+<div style="margin-left: 20px;" class="comment86770 comment" id="86770">
+	<div class="elements">
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: gray">0</span></span>
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Часы из дисплея покупателя (VFD) v2_files/notuser.png" width="48"></div>
+	<div class="com_content">
+		<div class="title">Krohovich <span class="date"><time pubdate="" datetime="2023-01-28T15:49:51+03:00">28.01.2023 15:49</time></span> <a href="https://cxem.net/arduino/arduino275.php#comment-86770" rel="nofollow">#</a></div>
+		<div class="text">Спасибо !</div>
+		
+		
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-86870"></a>
+<div style="margin-left: 40px;" class="comment86870 comment" id="86870">
+	<div class="elements">
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: gray">0</span></span>
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Часы из дисплея покупателя (VFD) v2_files/notuser.png" width="48"></div>
+	<div class="com_content">
+		<div class="title">Krohovich <span class="date"><time pubdate="" datetime="2023-02-08T16:14:33+03:00">08.02.2023 16:14</time></span> <a href="https://cxem.net/arduino/arduino275.php#comment-86870" rel="nofollow">#</a></div>
+		<div class="text">Пришёл дисплей.<br>
+Размерчик огого.</div>
+		
+		<div><b>Прикрепленный файл:</b> <a href="https://cxem.net/ckfinder/userfiles/comments/86870_2029.jpg">2029.jpg</a></div>
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-86879"></a>
+<div style="margin-left: 20px;" class="comment86879 comment" id="86879">
+	<div class="elements">
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: gray">0</span></span>
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Часы из дисплея покупателя (VFD) v2_files/notuser.png" width="48"></div>
+	<div class="com_content">
+		<div class="title">Krohovich <span class="date"><time pubdate="" datetime="2023-02-09T23:34:42+03:00">09.02.2023 23:34</time></span> <a href="https://cxem.net/arduino/arduino275.php#comment-86879" rel="nofollow">#</a></div>
+		<div class="text">Скажите, какой BME280 испрользовался ?<br>
+Никак не могу понять что купить.<br>
+https://www.dfrobot.com/product-1606.html<br>
+Такой вот есть в наличии.</div>
+		
+		
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-86883"></a>
+<div style="margin-left: 0px;" class="comment86883 comment" id="86883">
+	<div class="elements">
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: gray">0</span></span>
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Часы из дисплея покупателя (VFD) v2_files/394de05eb54380d1220dd836ddaed034_48.jpg" width="48"></div>
+	<div class="com_content">
+		<div class="title"><a href="https://cxem.net/cms/profile/26634/">devICEpro</a> <span class="date"><time pubdate="" datetime="2023-02-10T13:04:20+03:00">10.02.2023 13:04</time></span> <a href="https://cxem.net/arduino/arduino275.php#comment-86883" rel="nofollow">#</a></div>
+		<div class="text">У нас всё проще: <a href="https://aliclick.shop/r/c/1rq15chcjp65zpa7" title="Ссылка на https://aliclick.shop/r/c/1rq15chcjp65zpa7">BME280 5V</a></div>
+		
+		
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-86907"></a>
+<div style="margin-left: 0px;" class="comment86907 comment" id="86907">
+	<div class="elements">
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: green">+1</span></span>
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Часы из дисплея покупателя (VFD) v2_files/notuser.png" width="48"></div>
+	<div class="com_content">
+		<div class="title">Roman <span class="date"><time pubdate="" datetime="2023-02-13T22:55:13+03:00">13.02.2023 22:55</time></span> <a href="https://cxem.net/arduino/arduino275.php#comment-86907" rel="nofollow">#</a></div>
+		<div class="text">Вариант корпуса...</div>
+		
+		<div><b>Прикрепленный файл:</b> <a href="https://cxem.net/ckfinder/userfiles/comments/86907_IMG_20230212_210154231.jpg">IMG_20230212_210154231.jpg</a></div><div><b>Прикрепленный файл:</b> <a href="https://cxem.net/ckfinder/userfiles/comments/86907_IMG_20230212_210206869.jpg">IMG_20230212_210206869.jpg</a></div><div><b>Прикрепленный файл:</b> <a href="https://cxem.net/ckfinder/userfiles/comments/86907_IMG_20230212_212902057.jpg">IMG_20230212_212902057.jpg</a></div><div><b>Прикрепленный файл:</b> <a href="https://cxem.net/ckfinder/userfiles/comments/86907_IMG_20230212_212950205.jpg">IMG_20230212_212950205.jpg</a></div>
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-86917"></a>
+<div style="margin-left: 20px;" class="comment86917 comment" id="86917">
+	<div class="elements">
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: gray">0</span></span>
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Часы из дисплея покупателя (VFD) v2_files/notuser.png" width="48"></div>
+	<div class="com_content">
+		<div class="title">Krohovich <span class="date"><time pubdate="" datetime="2023-02-16T10:49:25+03:00">16.02.2023 10:49</time></span> <a href="https://cxem.net/arduino/arduino275.php#comment-86917" rel="nofollow">#</a></div>
+		<div class="text">Красота!<br>
+Жаль негде такое сделать</div>
+		
+		
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-87205"></a>
+<div style="margin-left: 0px;" class="comment87205 comment" id="87205">
+	<div class="elements">
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: green">+1</span></span>
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Часы из дисплея покупателя (VFD) v2_files/notuser.png" width="48"></div>
+	<div class="com_content">
+		<div class="title">Антон <span class="date"><time pubdate="" datetime="2023-03-29T08:50:52+03:00">29.03.2023 08:50</time></span> <a href="https://cxem.net/arduino/arduino275.php#comment-87205" rel="nofollow">#</a></div>
+		<div class="text">Подскажите, с какой целью стоят транзистор <a href="https://cxem.net/partinfo.php?s=8&amp;i=72" title="Просмотр параметров элемента BC847 [в новом окне]" target="_blank">BC847</a> и <a href="https://cxem.net/partinfo.php?s=8&amp;i=100" title="Просмотр параметров элемента MMBT5401 [в новом окне]" target="_blank">MMBT5401</a> в цепи высокого напряжения? База <a href="https://cxem.net/partinfo.php?s=8&amp;i=72" title="Просмотр параметров элемента BC847 [в новом окне]" target="_blank">BC847</a> напрямую подключена к +5 в.</div>
+		
+		
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-87206"></a>
+<div style="margin-left: 20px;" class="comment87206 comment" id="87206">
+	<div class="elements">
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: gray">0</span></span>
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Часы из дисплея покупателя (VFD) v2_files/4d8d191a44680473e8dee9ca8aa28146_48.jpg" width="48"><br>[Автор]</div>
+	<div class="com_content">
+		<div class="title"><a href="https://cxem.net/cms/profile/22479/">AMatroskin</a> <span class="date"><time pubdate="" datetime="2023-03-29T09:26:28+03:00">29.03.2023 09:26</time></span> <a href="https://cxem.net/arduino/arduino275.php#comment-87206" rel="nofollow">#</a></div>
+		<div class="text">Согласно документации на эти дисплеи высокое напряжение должно подаваться только после того как будет запитана логика колбы (+5в) а сниматься соответственно до отключения питания логики. Вот как раз эту задачу и выполняет эта пара транзисторов.</div>
+		
+		
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-88388"></a>
+<div style="margin-left: 0px;" class="comment88388 comment" id="88388">
+	<div class="elements">
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: gray">0</span></span>
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Часы из дисплея покупателя (VFD) v2_files/notuser.png" width="48"></div>
+	<div class="com_content">
+		<div class="title">Лев <span class="date"><time pubdate="" datetime="2023-12-31T08:44:48+03:00">31.12.2023 08:44</time></span> <a href="https://cxem.net/arduino/arduino275.php#comment-88388" rel="nofollow">#</a></div>
+		<div class="text">Что делать, если выдает ошибку компиляции??</div>
+		
+		<div><b>Прикрепленный файл:</b> <a href="https://cxem.net/ckfinder/userfiles/comments/88388_photo_2023-12-31_12-43-37.jpg">photo_2023-12-31_12-43-37.jpg</a></div>
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-88414"></a>
+<div style="margin-left: 20px;" class="comment88414 comment" id="88414">
+	<div class="elements">
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: gray">0</span></span>
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Часы из дисплея покупателя (VFD) v2_files/394de05eb54380d1220dd836ddaed034_48.jpg" width="48"></div>
+	<div class="com_content">
+		<div class="title"><a href="https://cxem.net/cms/profile/26634/">devICEpro</a> <span class="date"><time pubdate="" datetime="2024-01-07T00:24:52+03:00">07.01.2024 00:24</time></span> <a href="https://cxem.net/arduino/arduino275.php#comment-88414" rel="nofollow">#</a></div>
+		<div class="text">Скачать комплект библиотек, выложено на форуме. Использовать именно эти версии, это важно</div>
+		
+		
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-88403"></a>
+<div style="margin-left: 0px;" class="comment88403 comment" id="88403">
+	<div class="elements">
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: gray">0</span></span>
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Часы из дисплея покупателя (VFD) v2_files/4d8d191a44680473e8dee9ca8aa28146_48.jpg" width="48"><br>[Автор]</div>
+	<div class="com_content">
+		<div class="title"><a href="https://cxem.net/cms/profile/22479/">AMatroskin</a> <span class="date"><time pubdate="" datetime="2024-01-04T08:10:08+03:00">04.01.2024 08:10</time></span> <a href="https://cxem.net/arduino/arduino275.php#comment-88403" rel="nofollow">#</a></div>
+		<div class="text">Проблемы с библиотекой. В данной реализации аналоговая клавиатура не используется, можно просто отключить библиотеку Analog key и все что с ней связано.</div>
+		
+		
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-88601"></a>
+<div style="margin-left: 0px;" class="comment88601 comment" id="88601">
+	<div class="elements">
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: gray">0</span></span>
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Часы из дисплея покупателя (VFD) v2_files/notuser.png" width="48"></div>
+	<div class="com_content">
+		<div class="title">Александр <span class="date"><time pubdate="" datetime="2024-02-10T13:55:37+03:00">10.02.2024 13:55</time></span> <a href="https://cxem.net/arduino/arduino275.php#comment-88601" rel="nofollow">#</a></div>
+		<div class="text">Есть вот такой дисплей futaba m202ld12a на нем возможно реализовать данный проект?</div>
+		
+		
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div><a name="comment-88611"></a>
+<div style="margin-left: 20px;" class="comment88611 comment" id="88611">
+	<div class="elements">
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/up_notuser.png" class="up">
+		<span class="rating"><span style="color: gray">0</span></span>
+		<img src="./Часы из дисплея покупателя (VFD) v2_files/down_notuser.png" class="down">
+	</div>
+
+	<div class="avatar"><img src="./Часы из дисплея покупателя (VFD) v2_files/394de05eb54380d1220dd836ddaed034_48.jpg" width="48"></div>
+	<div class="com_content">
+		<div class="title"><a href="https://cxem.net/cms/profile/26634/">devICEpro</a> <span class="date"><time pubdate="" datetime="2024-02-11T20:10:20+03:00">11.02.2024 20:10</time></span> <a href="https://cxem.net/arduino/arduino275.php#comment-88611" rel="nofollow">#</a></div>
+		<div class="text">Такой дисплей программно и аппаратно несовместим. Использовать в данном проекте не получится.</div>
+		
+		
+		<div class="answer" title="Ответить на данное сообщение">Ответить</div>
+		
+		
+	</div>
+</div>	</div>
+	
+	
+	<div id="comment_form">
+	<form id="comments" enctype="multipart/form-data">
+		<div class="caption">Добавить комментарий</div>
+
+		<div class="fields">
+
+			
+			
+				<div class="line">
+					<div class="label"><b>Имя:</b></div>
+					<div class="inputs"><input type="text" id="name" name="name" placeholder="Ваше имя" required="required"></div>
+				</div>
+				<div class="line">
+					<div class="label"><b>E-mail:</b></div>
+					<div class="inputs">
+						<input type="email" id="email" name="email" placeholder="Ваш E-mail" required="required">
+						<span style="font-size: 10px; margin-left: 5px; color: #aaa;">не публикуется</span>
+					</div>
+				</div>
+				<div class="line" style="margin: 7px 0;">
+					<div class="label"></div>
+					<input class="hidden" type="checkbox" id="email_noty" name="email_noty">
+					<label for="email_noty" title="Уведомлять меня по E-mail об ответах на мой комментарий">Уведомлять об ответах на мой комментарий</label>
+
+				</div>
+
+			
+
+			<div id="toolbar">
+				<div class="panel">
+					<div class="tooltip" onclick="selText(&#39;[b]&#39;, &#39;[/b]&#39;)" title="Жирный"><img src="./Часы из дисплея покупателя (VFD) v2_files/bold.png"></div>
+					<div class="tooltip" onclick="selText(&#39;[i]&#39;, &#39;[/i]&#39;)" title="Курсив"><img src="./Часы из дисплея покупателя (VFD) v2_files/italic.png"></div>
+					<div class="tooltip" onclick="selText(&#39;[u]&#39;, &#39;[/u]&#39;)" title="Подчеркнутый"><img src="./Часы из дисплея покупателя (VFD) v2_files/underline.png"></div>
+					<div class="tooltip" onclick="selText(&#39;[s]&#39;, &#39;[/s]&#39;)" title="Зачеркнутый"><img src="./Часы из дисплея покупателя (VFD) v2_files/strike.png"></div>
+				</div>
+
+				<div class="panel">
+					<div class="tooltip" onclick="selText(&#39;[quote]&#39;, &#39;[/quote]&#39;)" title="Цитата"><img src="./Часы из дисплея покупателя (VFD) v2_files/quote.png"></div>
+					<div class="tooltip" onclick="selText(&#39;[url=]&#39;, &#39;[/url]&#39;)" title="Ссылка"><img src="./Часы из дисплея покупателя (VFD) v2_files/link.png"></div>
+					<div class="tooltip" onclick="selText(&#39;[code]&#39;, &#39;[/code]&#39;)" title="Исходный код"><img src="./Часы из дисплея покупателя (VFD) v2_files/code.png"></div>
+									</div>
+			</div>
+
+			<div class="line" style="display: table;">
+				<div class="label" style="display:table-cell; vertical-align: middle;"><b>Текст:</b></div>
+				<div class="inputs"><textarea id="msg" name="msg" rows="7" placeholder="Ваш комментарий" required="required"></textarea></div>
+				<input type="hidden" name="root" id="root" value="0">
+			</div>
+
+			
+				<div class="line">
+					<div class="label"><b>Защита от спама:</b></div>
+					<div class="inputs">
+						<span style="font-size: 11px; color: #175aaa">В чем измеряется электрическая мощность?</span><br>
+						<input type="text" name="answer" id="answer" placeholder="Ответ на вопрос" required="required">
+						<input type="hidden" name="answers" value="ватт, вт, ваттах, в ватт, в ваттах">
+					</div>
+				</div>
+
+			
+			
+				<div class="line">
+					<div class="label" title="Прикрепить файлы к комментарию"><b>Файлы:</b><br>&nbsp;</div>
+					<div class="inputs" id="inputsFiles">
+						<input type="file" id="attachComment" name="attach[]" multiple="true">
+						<span id="attachProgress"></span>
+						<div style="font-size: 11px; color: #777;">Для выбора нескольких файлов использйте CTRL</div>
+					</div>					
+				</div>
+
+			
+					</div>
+
+		<div style="margin: 10px 0 10px 80px; width: 340px;">
+							<input class="hidden" type="checkbox" id="commentsrules" name="rules">
+				<label for="commentsrules">Я согласен с <a href="https://cxem.net/arduino/arduino275.php#" id="rulescomments">правилами публикации комментариев</a></label>
+				<p>
+					<!--<a class="buildadd" style="float: right;" href="#" title="Написать про результат своей сборки">Я собрал</a>-->
+
+					<button type="submit" name="send" id="send" class="button-ok">Оставить комментарий</button>
+				</p>
+			
+		</div>
+		<div class="errors">
+		</div>
+	</form>
+
+	
+<div class="comment-books _my-ctr" data-id="88" data-category="1" id="_myproduct88">
+	<div class="cbooks-picture">
+		<div class="cbooks-image">
+			<img src="./Часы из дисплея покупателя (VFD) v2_files/88_h225.jpg" style="max-height:225px; max-width: 250px;" title="Модуль измерения тока на ACS712 (30А)" alt="Модуль измерения тока на ACS712 (30А)">
+			<div class="bottom_hint">
+				Модуль измерения тока на ACS712 (30А)			</div>
+		</div>
+		<div class="cbooks-buy"><a href="http://exdiy.net/arduino/acs712-30/" rel="nofollow" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;exdiy&#39;, &#39;click-comment&#39;, &#39;Модуль измерения тока на ACS712 (30А)&#39;);" class="button button-ok">Купить 3 $ </a></div>
+  </div>
+</div>
+
+<div class="comment-books-additional"><span class="_my-ctr" data-id="129" data-category="1" id="_myproduct129">
+					<a href="http://alipromo.com/redirect/cpa/o/rh05xbaani8mg445b5p2hurc7l1csmr4/" rel="nofollow" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;aliexpress&#39;, &#39;click-comment&#39;, &#39;UNI-T UT-61A&#39;);"><img src="./Часы из дисплея покупателя (VFD) v2_files/129_h110.jpg" height="110px" srcset="//cxem.net/cache/ds_08/129_s.jpg 2x" title="UNI-T UT-61A [31 $]" alt="UNI-T UT-61A" style="max-width: 120px;"></a>
+				   </span><span class="_my-ctr" data-id="120" data-category="1" id="_myproduct120">
+					<a href="http://alipromo.com/redirect/cpa/o/9e0bf437cd4c6b7cc8bf20b82a6fe98c" rel="nofollow" onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;aliexpress&#39;, &#39;click-comment&#39;, &#39;Тестер ESR, полупроводников, резисторов, индуктивностей&#39;);"><img src="./Часы из дисплея покупателя (VFD) v2_files/120_h110.jpg" height="110px" srcset="//cxem.net/cache/ds_08/120_s.jpg 2x" title="Тестер ESR, полупроводников, резисторов, индуктивностей [13 $]" alt="Тестер ESR, полупроводников, резисторов, индуктивностей" style="max-width: 120px;"></a>
+				   </span></div>
+</div>
+	<div class="toTop">вверх</div>
+</div>
+</div>
+	
+	<div id="footer">
+		<div class="copyright">
+			<div class="cnt"><strong>1999-2024 Сайт-ПАЯЛЬНИК  'cxem.net'</strong><br>
+			При использовании материалов сайта, обязательна<br>
+			ссылка на сайт ПАЯЛЬНИК и первоисточник</div>
+		</div>
+		<div class="social">
+			<a href="http://vk.com/cxem_net_payalnik" rel="nofollow"><img src="./Часы из дисплея покупателя (VFD) v2_files/social_vk.png" border="0"></a>
+			<a href="https://www.youtube.com/channel/UCh9cB06Agv1Z8QTIkiGqotA" rel="nofollow"><img src="./Часы из дисплея покупателя (VFD) v2_files/social_youtube.png" border="0"></a>
+			<!-- <a href="https://www.facebook.com/cxemnet" rel="nofollow"><img src="//cxem.net/images/social_fb.png" border="0"></a>	 -->		
+			<a href="http://cxem.net/contact.php"><img src="./Часы из дисплея покупателя (VFD) v2_files/social_email.png" border="0"></a>
+		</div>
+		<div style="text-align: center"><div class="rek_plashka banner_pod"><div style="text-align: center;"><a href="https://www.compel.ru/lib/254233?utm_source=cxem.net&amp;utm_medium=banner&amp;utm_campaign=eve&amp;utm_content=20240701&amp;utm_term=468x60&amp;erid=4CQwVszL76wmsDyo3rY"><img src="./Часы из дисплея покупателя (VFD) v2_files/cxem_bottom_1720195829.png"></a></div><span class="plashka_tooltip" data-microtip-position="bottom-left" role="tooltip" data-microtip-size="medium" aria-label="АО КОМПЭЛ, ИНН: 7713005406, ОГРН: 1027700032161">Реклама ⓘ</span></div></div>		<div class="adv_text">
+			<a href="http://cxem.net/reklama.php">Размещение рекламы</a>
+		</div>
+		<div class="stat">
+			<!-- СЧЕТЧИКИ -->
+				<a href="http://www.liveinternet.ru/click;payalnik_all" target="_blank" rel="nofollow"><img src="./Часы из дисплея покупателя (VFD) v2_files/logo" title="LiveInternet: показано число просмотров за 24 часа, посетителей за 24 часа и за сегодня" border="0" width="88" height="31"></a>
+			<!-- /СЧЕТЧИКИ -->				
+		</div>
+	</div>
+</div>
+
+
+<script>window.yaContextCb.push(()=>{
+  Ya.Context.AdvManager.render({
+    renderTo: 'ydi_cxem_bottom1',
+    blockId: 'R-A-126079-1'
+  })
+})</script>
+
+<!-- <script src="/js/ad_new.js"></script> -->
+
+
+</body></html>
