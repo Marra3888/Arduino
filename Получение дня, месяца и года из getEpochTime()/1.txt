@@ -1,0 +1,97 @@
+#include <ESP8266WiFi.h> // Для ESP8266 (для ESP32 используйте <WiFi.h>)
+#include <WiFiUDP.h>
+#include <NTPClient.h>
+
+// Настройки Wi-Fi
+const char* ssid = "YOUR_WIFI_SSID";      // Замените на имя вашей Wi-Fi сети
+const char* password = "YOUR_WIFI_PASSWORD"; // Замените на пароль Wi-Fi
+
+// Настройки NTP
+const char* ntpServer = "pool.ntp.org";
+const long utcOffsetInSeconds = 10800; // UTC+3, например, Москва
+
+WiFiUDP ntpUDP;
+NTPClient timeClient(ntpUDP, ntpServer, utcOffsetInSeconds);
+
+void setup() {
+  Serial.begin(115200);
+
+  // Подключение к Wi-Fi
+  WiFi.begin(ssid, password);
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+  Serial.println("\nWiFi connected!");
+
+  timeClient.begin();
+}
+
+void loop() {
+  timeClient.update();
+
+  if (timeClient.isTimeSet()) {
+    unsigned long epochTime = timeClient.getEpochTime();
+    int day, month, year;
+    epochToDate(epochTime, day, month, year);
+
+    Serial.print("Date: ");
+    Serial.print(day);
+    Serial.print(".");
+    Serial.print(month);
+    Serial.print(".");
+    Serial.println(year);
+
+    Serial.print("Time: ");
+    Serial.print(timeClient.getHours());
+    Serial.print(":");
+    Serial.print(timeClient.getMinutes());
+    Serial.print(":");
+    Serial.println(timeClient.getSeconds());
+  }
+
+  delay(1000); // Обновляем каждую секунду
+}
+
+// Функция преобразования Unix timestamp в дату
+void epochToDate(unsigned long epoch, int &day, int &month, int &year) {
+  unsigned long days = epoch / 86400UL; // Количество дней с 1970-01-01 (86400 секунд в сутках)
+  year = 1970;
+
+  // Учитываем високосные годы
+  while (days >= 365) {
+    int daysInYear = (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)) ? 366 : 365;
+    if (days >= daysInYear) {
+      days -= daysInYear;
+      year++;
+    } else {
+      break;
+    }
+  }
+
+  // Массив дней в месяцах (не високосный год)
+  int daysInMonth[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+  // Проверяем високосный год
+  if (year % 4 == 0 && (year % 100 != 0 || year % 400 == 0)) {
+    daysInMonth[1] = 29; // Февраль в високосном году
+  }
+
+  month = 1;
+  while (days >= daysInMonth[month - 1]) {
+    days -= daysInMonth[month - 1];
+    month++;
+  }
+
+  day = days + 1; // Остаток — это день месяца (начинаем с 1, а не с 0)
+}
+
+//Как это работает?
+//getEpochTime():
+//Возвращает Unix timestamp (например, 1740681600 для какого-то момента в 2025 году).
+//epochToDate:
+//Преобразует timestamp в дату:
+//Делит секунды на 86400 (секунд в сутках), чтобы получить дни с 1 января 1970 года.
+//Учитывает високосные годы (366 дней) и обычные годы (365 дней), чтобы определить год.
+//Вычитает дни по месяцам, чтобы найти месяц и день.
+//Вывод:
+//Печатает дату в формате DD.MM.YYYY и время HH:MM:SS.

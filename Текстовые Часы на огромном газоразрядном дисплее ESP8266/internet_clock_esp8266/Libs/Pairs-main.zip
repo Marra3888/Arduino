@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" copyright="Copyright (c) Microsoft Corporation. All Rights Reserved.">
+  <assemblyIdentity name="Microsoft-Windows-Desktop_Technologies-Text_Input_Services-IME-Simplified-Chinese-PinyinDS-Datafiles" version="10.0.19041.6456" processorArchitecture="amd64" language="neutral" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS" />
+  <file name="ChsPinyin.lm" destinationPath="$(runtime.windows)\InputMethod\CHS\" sourceName="ChsPinyin.lm" importPath="$(build.nttree)\ModernIME\" sourcePath=".\">
+    <securityDescriptor name="WRP_FILE_DEFAULT_SDDL" />
+    <asmv2:hash xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#">
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>+/JfjU0945zCxqEt3bB2InrPw22A9rOtG1jqUSUvkg8=</dsig:DigestValue>
+    </asmv2:hash>
+  </file>
+  <file name="ChsPinyin.lex" destinationPath="$(runtime.windows)\InputMethod\CHS\" sourceName="ChsPinyin.lex" importPath="$(build.nttree)\ModernIME\" sourcePath=".\">
+    <securityDescriptor name="WRP_FILE_DEFAULT_SDDL" />
+    <asmv2:hash xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#">
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>wKREbewjNN99SRsnfUq4SABXnvFPxlYf62/sXVg7T1k=</dsig:DigestValue>
+    </asmv2:hash>
+  </file>
+  <file name="ChsPinyinHAP.lex" destinationPath="$(runtime.windows)\InputMethod\CHS\" sourceName="ChsPinyinHAP.lex" importPath="$(build.nttree)\ModernIME\" sourcePath=".\">
+    <securityDescriptor name="WRP_FILE_DEFAULT_SDDL" />
+    <asmv2:hash xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#">
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>/EwuxBUMjamLfTnF048DaUtV/Kba8N/9tLi9C7NMJiI=</dsig:DigestValue>
+    </asmv2:hash>
+  </file>
+  <file name="ChsPinyinAP.lex" destinationPath="$(runtime.windows)\InputMethod\CHS\" sourceName="ChsPinyinAP.lex" importPath="$(build.nttree)\ModernIME\" sourcePath=".\">
+    <securityDescriptor name="WRP_FILE_DEFAULT_SDDL" />
+    <asmv2:hash xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#">
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>p+1uDsWttriIu8i8S1VG/mlCOCgK6ev/rpR+kCyfIVM=</dsig:DigestValue>
+    </asmv2:hash>
+  </file>
+  <file name="ChsPinyinUDP.lex" destinationPath="$(runtime.windows)\InputMethod\CHS\" sourceName="ChsPinyinUDP.lex" importPath="$(build.nttree)\ModernIME\" sourcePath=".\">
+    <securityDescriptor name="WRP_FILE_DEFAULT_SDDL" />
+    <asmv2:hash xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#">
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>h+aHNCrkzgWTbkeyOvUc4UTYopoNcC7AqV+gTVBzw5o=</dsig:DigestValue>
+    </asmv2:hash>
+  </file>
+  <file name="ChsDoublePinyinUDP.lex" destinationPath="$(runtime.windows)\InputMethod\CHS\" sourceName="ChsDoublePinyinUDP.lex" importPath="$(build.nttree)\ModernIME\" sourcePath=".\">
+    <securityDescriptor name="WRP_FILE_DEFAULT_SDDL" />
+    <asmv2:hash xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#">
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>8wFiV3DjBrzK71tW8Nr+9s0QhYzfexZ+Ujs4q3OvqXc=</dsig:DigestValue>
+    </asmv2:hash>
+  </file>
+  <file name="ChsPinyinDM01.lex" destinationPath="$(runtime.windows)\InputMethod\CHS\" sourceName="ChsPinyinDM01.lex" importPath="$(build.nttree)\ModernIME\" sourcePath=".\">
+    <securityDescriptor name="WRP_FILE_DEFAULT_SDDL" />
+    <asmv2:hash xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#">
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>7zMMcojUB6MEKGizFa45HCFMsHeqD0JcmIOy3usW8RA=</dsig:DigestValue>
+    </asmv2:hash>
+  </file>
+  <file name="ChsPinyinDM02.lex" destinationPath="$(runtime.windows)\InputMethod\CHS\" sourceName="ChsPinyinDM02.lex" importPath="$(build.nttree)\ModernIME\" sourcePath=".\">
+    <securityDescriptor name="WRP_FILE_DEFAULT_SDDL" />
+    <asmv2:hash xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#">
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>UOx9g+MPczIcF6oXPxULQnjq/YysCqkxBYM51LU3Cfs=</dsig:DigestValue>
+    </asmv2:hash>
+  </file>
+  <file name="ChsPinyinDM03.lex" destinationPath="$(runtime.windows)\InputMethod\CHS\" sourceName="ChsPinyinDM03.lex" importPath="$(build.nttree)\ModernIME\" sourcePath=".\">
+    <securityDescriptor name="WRP_FILE_DEFAULT_SDDL" />
+    <asmv2:hash xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#">
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>kj4GOE+sierA6gAj1D/XMb5URUD0/r4zCrslPvE5xRI=</dsig:DigestValue>
+    </asmv2:hash>
+  </file>
+  <file name="ChsPinyinDM04.lex" destinationPath="$(runtime.windows)\InputMethod\CHS\" sourceName="ChsPinyinDM04.lex" importPath="$(build.nttree)\ModernIME\" sourcePath=".\">
+    <securityDescriptor name="WRP_FILE_DEFAULT_SDDL" />
+    <asmv2:hash xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#">
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>Pl15g2GdOP0X6PfiIeCeYLMWRJfD/I2uJzQB/RWUDf0=</dsig:DigestValue>
+    </asmv2:hash>
+  </file>
+  <file name="ChsPinyinDM05.lex" destinationPath="$(runtime.windows)\InputMethod\CHS\" sourceName="ChsPinyinDM05.lex" importPath="$(build.nttree)\ModernIME\" sourcePath=".\">
+    <securityDescriptor name="WRP_FILE_DEFAULT_SDDL" />
+    <asmv2:hash xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#">
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>ZqKyldNUSIyNs8vYBzI3O/0MDVJZdz8eqg1SasgDdFo=</dsig:DigestValue>
+    </asmv2:hash>
+  </file>
+  <file name="ChsPinyinDM06.lex" destinationPath="$(runtime.windows)\InputMethod\CHS\" sourceName="ChsPinyinDM06.lex" importPath="$(build.nttree)\ModernIME\" sourcePath=".\">
+    <securityDescriptor name="WRP_FILE_DEFAULT_SDDL" />
+    <asmv2:hash xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#">
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>Cviro7O/BwxMsZIJ1gqlUznEtRlB1t2HdSQy21WY4cU=</dsig:DigestValue>
+    </asmv2:hash>
+  </file>
+  <file name="ChsPinyinStx.lex" destinationPath="$(runtime.windows)\InputMethod\CHS\" sourceName="ChsPinyinStx.lex" importPath="$(build.nttree)\ModernIME\" sourcePath=".\">
+    <securityDescriptor name="WRP_FILE_DEFAULT_SDDL" />
+    <asmv2:hash xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#">
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>MUHFMsG/IYQ55gRpxXJM4nwIAk76lN0xUpLeS+56G+g=</dsig:DigestValue>
+    </asmv2:hash>
+  </file>
+  <trustInfo>
+    <security>
+      <accessControl>
+        <securityDescriptorDefinitions>
+          <securityDescriptorDefinition name="WRP_FILE_DEFAULT_SDDL" sddl="O:S-1-5-80-956008885-3418522649-1831038044-1853292631-2271478464G:S-1-5-80-956008885-3418522649-1831038044-1853292631-2271478464D:P(A;;FA;;;S-1-5-80-956008885-3418522649-1831038044-1853292631-2271478464)(A;;GRGX;;;BA)(A;;GRGX;;;SY)(A;;GRGX;;;BU)(A;;GRGX;;;S-1-15-2-1)(A;;GRGX;;;S-1-15-2-2)S:(AU;FASA;0x000D0116;;;WD)" operationHint="replace" description="Default SDDL for Windows Resource Protected file" />
+        </securityDescriptorDefinitions>
+      </accessControl>
+    </security>
+  </trustInfo>
+</assembly>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<assembly xmlns="urn:schemas-microsoft-com:asm.v3" manifestVersion="1.0" copyright="Copyright (c) Microsoft Corporation. All Rights Reserved.">
+  <assemblyIdentity name="Microsoft-Windows-XPSReachViewer.Resources" version="10.0.19041.3636" processorArchitecture="amd64" language="es-MX" buildType="release" publicKeyToken="31bf3856ad364e35" versionScope="nonSxS" />
+  <localization>
+    <resources culture="es-MX">
+      <stringTable>
+        <string id="displayName2" value="WRP_FILE_DEFAULT_SDDL" />
+        <string id="description3" value="Default SDDL for Windows Resource Protected file" />
+      </stringTable>
+    </resources>
+  </localization>
+  <file name="xpsrchvw.exe.mui" destinationPath="$(runtime.system32)\es-MX\" sourceName="xpsrchvw.exe.mui" importPath="$(build.nttree)\multi\es-mx\" sourcePath=".\">
+    <securityDescriptor name="WRP_FILE_DEFAULT_SDDL" />
+    <asmv2:hash xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#">
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>kmiZIIE/AOkTmIKLooYszUai45amvBRzEWA1gpdzK6Y=</dsig:DigestValue>
+    </asmv2:hash>
+  </file>
+  <memberships>
+    <categoryMembership>
+      <id name="Microsoft.Windows.Multilingual_Components_All" version="10.0.19041.3636" publicKeyToken="31bf3856ad364e35" buildType="release" language="neutral" processorArchitecture="amd64" />
+    </categoryMembership>
+    <categoryMembership>
+      <id name="Microsoft.Windows.Categories" version="1.0.0.0" publicKeyToken="365143bb27e7ac8b" typeName="SingleInstanceFiles" />
+    </categoryMembership>
+  </memberships>
+  <trustInfo>
+    <security>
+      <accessControl>
+        <securityDescriptorDefinitions>
+          <securityDescriptorDefinition name="WRP_FILE_DEFAULT_SDDL" sddl="O:S-1-5-80-956008885-3418522649-1831038044-1853292631-2271478464G:S-1-5-80-956008885-3418522649-1831038044-1853292631-2271478464D:P(A;;FA;;;S-1-5-80-956008885-3418522649-1831038044-1853292631-2271478464)(A;;GRGX;;;BA)(A;;GRGX;;;SY)(A;;GRGX;;;BU)(A;;GRGX;;;S-1-15-2-1)(A;;GRGX;;;S-1-15-2-2)S:(AU;FASA;0x000D0116;;;WD)" operationHint="replace" description="Default SDDL for Windows Resource Protected file" />
+        </securityDescriptorDefinitions>
+      </accessControl>
+    </security>
+  </trustInfo>
+</assembly>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   Ã$äÑ€	è¡»]\ô~¿ÏÓtgÄÊ.Á+„Ï~<.ôGAÒ`i–´’uŞİÏXşÀ} ¾/ø$ã³À¬‡Kvhì˜È±«WYoÁÃn}sëöî§çù«ü"1?™?ÊÏçç¿±ùıü4ÿ+™ŸÍï³ü	ÌüŒ¯ù)­(>äÙ-dÕd3áÙ,‰„UF‰Î³ü9Ğú½ ¥ÑØÑ4°”gÌ†CÔèi±fÄ Á ›¢ş`şPÉ¯ ŞEş|~¢¹èy”„‡Ì#j››³ÏàÑÇq(^¹³}Åà#˜LgQ†œŒyÿ¶-fÌç/ò–Ÿ•çÿĞïy~Æ@Y§ğúÏüñü—-–ÿ	Ÿ^äü,vá?òÿ`şËŸ²a0N9a=˜NÇ¸ŠùÀi9Çn‚8êXk±,™‘.Û|¤£§ä
+ÏóS¬¢îNæ¿Âªó)ÍŸ*ö_å§óûóÇSÓ(Â(õà%ÍŠøÚd÷ø÷UE¯ƒÂ³ğÓOl ¶Ô€¯ÙÖŠF#°ƒÙpÏdMv~;wwH€.»^ZÔ`1È+5®FÜl’%7KÆ¬ÙC6·²)$/ö—À«Á®c¬ä"Rpø!÷j!;¾¥şç¥`ñGZÙRÅå°.ç4¼˜rÄ%š±RTJŠÌgH¼ïÄüœáÏb^˜‡a®ù< ¬Y…Øvğ¿Ñmó'”kÎ|x	&<Y¡·.bLc˜>÷?á‘çï8kD§.TDG;
+Çœy“°°=¥—şìşÔ"[ûÂ«Ò{aÌ:iVZAìÆ>;HxpoÇšŠ÷Ú»l]áÎŸ…Í¦†9v$]e×ªf_€æ)sz˜â²šäT‡İ0™N0Î¬°ËàoUË8&ÜP^K&¼ªj
+[•…”Ùp©hÜ©,$—ì¸/‡·”˜\có$È¦Io©(…Ì4±ú¹{{ù†	NM/Æ|'7²Wrs“ûiv3W¾k‘Dv€rQ·­MåÀ@+dÑñu0q¯Xèâı·ü‰A“æ&p;qg`i@ÂLÛ®FÌ¼]¬Ç’ˆh€»
+9O¡`Áê­Š™Æ‰–äH/á°u)¨`0Š@
+‹I‹õE9-?si9ßd’‰Ë˜R,ys[š¼…I6Æu<¾†9MÕëËYåÛ ï	¢z“nO4¼àŠl+.cW§ÑªÁìj W
+*ıé$N:7yS˜Àƒ	··†¾L½PñkÅØDêovØpš°;ÛÅò	ŸL¦GÜóÈ!|á»¤ÎfEl¿e l	r†ì¸”†\-Ö†-ˆj4c¥\¨Q¼zõš+tíg¤árb^)H H€mHl<•Äêdáà»KF­xó Y…¯×ˆŠ…ş¾(§!ßRp)¶nZ	ªpû¬ğDÄz©“dü®Ší“âœIÉïÍö"}®hŠ•ùSÙªÏ·¶ÿ YL4vÔG¢nñŠè¹i¼CÜ“Yğ­rÌ¨Äœ;ÊÉˆğZËâ£pœšR–F»>5<8bˆchtE&©»é#ˆ(nT^—‡éxµƒ™îVI,@of»òÉÊ:.iN…©LCT‰	ˆ²m*	³G&_–e%n–éF¯X\²×–‹{1®²ÜäĞ]¶-?F/U;^ùğäğÑz›,=^‰Ñ¶<ÁÁªÊ™	ly*mÇ+×œ'´Rây*7Àf®öREŞÇvB¹3uJ¼g»y?~Äy³
+ÁÕÖ1ŠØ6İ«$îbQëÔz)uTÕâF¥9†.Ge7©>V¼TŸcQ¹;Ç«ñ›|À»¬ÑÚ¢F„GoÀš5Z)ª³ÇÊ¶XÁ=XE[–ƒæÏ:c›ˆ—e!»*2‘¬§j³Ì³÷ –‡WU8ˆ£ìuÀÚ¯.Ôæ)]œ[}Gâ"®uW¶Îz5;äÊ†­é
+US¨•klL¯Ùdë”i
+¤6VÉ0 ï¼?EÖkË´G^ˆŞ0šñ
+CjIˆ±Wª¸É<+º±ó¬ü³ «ÕF¸L<µqC<Uóó‚¶]md-l<íİ]Òw².œŠfØŞ]Wø2—–yÙ(L±Ç³Vq:)Uòµ”Ì «”+QÜ’ûò`qi²ûûƒt$nú>æc˜ÿ¸ä­jëmşïI.uÈ/w?ıüëİUš¡tMõbY›1áÔYR²J‰$°j::v¢û×â1ˆ•b¡–˜Õ”XŠ]¦¾_­³&wEwOq6t	è1×@ÌØ×^i{)µ'6QBë†àVå…ø,¹òTOùÂS=2ÙÚY¿Qjsl][JÂZ¿ö–iA.äMsÒ×'íJËÏ>àiV7Z^RéâÚle4RÇ&ƒã.¥TpºM4}×¾#¥İ~íßê ½”wzçxÙL7¿i/ÏÂş=¼˜3:©Çzv‚Œ›óÒü?£¢ö˜=Ä®¾p;œğé,£5×¯Áš>¡8ÛğĞ÷*÷'¼äÕ˜ülyìëş¢nuKË=CÊÔX·b«Úû4/5„ˆq2Íx¤ß-)t¨¾é ãL—‡r†X3BŞñÜá(N`N³ Œ,€ˆpW!€’æÒ×
+§¾ú"Â$õÛ7ÜW8†ş‹kÉQ…än·xWw876
+úÇ;ÿPK
+    ¦X6P„÷J  !   	 Pairs-main/src/PairsFile.hUT ¸ıf•UÍNÛ@¾ç)¦A¢6!	¡¤Aê¡9#Ñ[[Y&^'«:¶å¨Z"‘@Ë¡¨U_ Rß DD„Â+ì¾Qg×ã8+í™og¿™owÅõôf[Çn\n…Ú+4¼|å!µbk7eÍïéÔó‹­¼°™`“ÚÄP^ïïílno«p|œ¶mmªéˆõ}¬aé¾2PZ*à†mD&øœˆ-ñ:C*¦_©Ô÷×À6}¨Z–xh8¶@£¥{kàêA+íÃ‚­M-€À	t”Kx©Ñ$òòIPßW0bAU«‰G‹‡ˆGdíääccø)ïòë³;6a6â=~ü7ìV˜ğx=7dc~
+l„?|û1CöeÀC‡1‘TŠ‹‰¥ykQL?E8N^<şpOÒ³>º{À®ñó^Pf£ Ñ.(üİvËÏ‹qíæ¿¡m‚åQşYæÇŠÉîù	›ğsÁ
+©fìJR½ãßØØ Ø%2<cC~Rö|ÅJNÑGj")Éãôñ‰0™ã‰Ì5‰8Áä0DäšÄ#Åc#ê3)Bà…Ä'"Gn‚d}à8&µeêåmLİ#bEæ²F‰(Ïp¥Tt¡gC©:çC×ú.ùHıÀWäê©éÑâ’
+1Å_$Úq‰a÷ò©~M&ğe3& dJ¼CÔ‹>ıD^şêCÃ$Ò#º¡È|w´`MÕ|!°TŒE‘+qêÛî=æòü]éù<Ü#&2h)©( –OT‘£'U¤“¼Å¾òBoNØåœf²™Hy(ä>d7Ø+}ŞuIèz *<Kã	)<J?i=‹ØJ–øÈ£8[v•ĞZsK‡›z VïûF…öG(
+w„&}w¢©Xã¢$cÆ™beJ%„$7Àk¡6´‹{$M22ÿ‚¯Dçv%ÖKIßñŸUèsVİ€6>(YÉaßÙM<‚Ô¤mÕ¦–E}eY§„:Å•—uŠÔ­ğ¯®&`=²[‹6ºæÍˆjÚY¤;qi—–Ò«äzôÃDgåôøĞ¦çBúÑfC²_O™’ZnİÕ\§ŠG7±jşPK
+    ¦Xú~:Ÿ   á    	 Pairs-main/src/PairsStatic.hUT ¸ıfMŒÁ
+‚@E÷ï+.¹Q
+ÉM-¡…‹v»"b-FÆ™Äo4w—Ë9ÇSš½†®å‘'Z.mYáxÖ¥mÖéêİ\™Ğ}ö5a½!2U£$3v¤‰OƒürËRâ’õ=f67ÌÊÒ%€ (->.O¼f…}İ§¶ˆ8aØ	ÍèìÿÉUÙ\{‰úÎŞaÑ#ÉPK  
+     ¦X             	              Pairs-main/UT ¸ıfPK  
+    ¦X7î]Ü>   B    	          2   Pairs-main/.gitattributesUT ¸ıfPK  
+     ¦X             	          °   Pairs-main/.github/UT ¸ıfPK  
+     ¦X             	          ê   Pairs-main/.github/workflows/UT ¸ıfPK  
+    ¦XT @P  C  ( 	          .  Pairs-main/.github/workflows/tg-send.ymlUT ¸ıfPK  
+    ¦X¨:|Üt  *   	          ›  Pairs-main/LICENSEUT ¸ıfPK  
+    ¦X¦+»Ÿ¡  ß@   	          H  Pairs-main/README.mdUT ¸ıfPK  
+    ¦X(¸#Îë  	&   	          $  Pairs-main/README_EN.mdUT ¸ıfPK  
+     ¦X             	          M+  Pairs-main/examples/UT ¸ıfPK  
+     ¦X            & 	          ˆ+  Pairs-main/examples/pairsFileLittleFS/UT ¸ıfPK  
+    ¦Xô¤§D    ; 	          Õ+  Pairs-main/examples/pairsFileLittleFS/pairsFileLittleFS.inoUT ¸ıfPK  
+     ¦X             	          {-  Pairs-main/examples/test/UT ¸ıfPK  
+    ¦Xgnƒù6  3  ! 	          »-  Pairs-main/examples/test/test.inoUT ¸ıfPK  
+     ¦X             	          9/  Pairs-main/examples/unitTest/UT ¸ıfPK  
+    ¦XEÔí0  %  ) 	          }/  Pairs-main/examples/unitTest/unitTest.inoUT ¸ıfPK  
+     ¦X             	          ı2  Pairs-main/examples/write_read/UT ¸ıfPK  
+    ¦Xv'˜p½    - 	          C3  Pairs-main/examples/write_read/write_read.inoUT ¸ıfPK  
+    ¦X¥ŞW`ú   #   	          T6  Pairs-main/keywords.txtUT ¸ıfPK  
+    ¦XKšÚÀ   =   	          Œ7  Pairs-main/library.propertiesUT ¸ıfPK  
+     ¦X             	          8  Pairs-main/src/UT ¸ıfPK  
+    ¦X´h*úa   z    	          Æ8  Pairs-main/src/Pair.hUT ¸ıfPK  
+    ¦X"Sÿ  »   	          c9  Pairs-main/src/PairUtils.hUT ¸ıfPK  
+    ¦X9+J  8	   	          ¾;  Pairs-main/src/Pairs.hUT ¸ıfPK  
+    ¦XxjÓJ±  w$   	          ?  Pairs-main/src/PairsExt.hUT ¸ıfPK  
+    ¦X6P„÷J  !   	          H  Pairs-main/src/PairsFile.hUT ¸ıfPK  
+    ¦Xú~:Ÿ   á    	          “K  Pairs-main/src/PairsStatic.hUT ¸ıfPK      g  uL  ( ea8c6315c245757be0f13cad8252b2bcd1c8cec6
