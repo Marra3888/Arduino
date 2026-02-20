@@ -1,0 +1,41 @@
+#include <Wire.h> // Подключение библиотеки Wire для работы с I2C
+
+#define LC75847_ADDRESS 0x28 // Адрес микросхемы на шине I2C
+#define DISPLAY_SIZE 32 // Количество символов на ЖК-дисплее
+
+void setup() {
+  Wire.begin(); // Инициализация шины I2C
+  delay(100); // Задержка для установления соединения с микросхемой
+  writeTextToDisplay("Hello World!"); // Вывод текста на ЖК-дисплей
+}
+
+void loop() {
+  // Код для работы в режиме работы
+}
+
+void writeTextToDisplay(String text) {
+  // Проверка длины текста
+  if (text.length() > DISPLAY_SIZE) {
+    text = text.substring(0, DISPLAY_SIZE); // Обрезаем текст до длины дисплея
+  }
+
+  // Отправка данных на микросхему
+  Wire.beginTransmission(LC75847_ADDRESS); // Начало передачи данных
+  Wire.write(0x80); // Адрес первого сегмента дисплея
+  for (int i = 0; i < DISPLAY_SIZE; i++) {
+    byte data = 0x00; // Инициализация байта данных
+    if (i < text.length()) {
+      data = charToSegmentData(text.charAt(i)); // Преобразование символа в байт данных для отображения на дисплее
+    }
+    Wire.write(data); // Отправка байта данных на микросхему
+  }
+  Wire.endTransmission(); // Окончание передачи данных
+}
+
+byte charToSegmentData(char ch) {
+  // Конвертирование символа в соответствующие байты данных для отображения на дисплее
+  // Код для конвертации символов может отличаться в зависимости от типа ЖК-дисплея
+  byte data = 0x00;
+  switch(ch) {
+    case '0': data = 0xFC; break;
+    case

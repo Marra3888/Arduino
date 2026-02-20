@@ -1,0 +1,27 @@
+#include <Wire.h> // Подключение библиотеки Wire для работы с I2C
+#define LC75847_ADDRESS 0x28 // Адрес микросхемы на шине I2C
+
+void setup() {
+  Wire.begin(); // Инициализация шины I2C
+}
+
+void loop() {
+  // Запись данных в микросхему
+  Wire.beginTransmission(LC75847_ADDRESS); // Начало передачи данных
+  Wire.write(0x00); // Адрес регистра для записи данных
+  Wire.write(0x01); // Записываемые данные
+  Wire.endTransmission(); // Окончание передачи данных
+
+  // Чтение данных из микросхемы
+  Wire.beginTransmission(LC75847_ADDRESS); // Начало передачи адреса чтения
+  Wire.write(0x00); // Адрес регистра для чтения данных
+  Wire.endTransmission(); // Окончание передачи адреса чтения
+
+  Wire.requestFrom(LC75847_ADDRESS, 1); // Запрос на чтение одного байта
+  while (Wire.available()) { // Цикл чтения данных
+    char data = Wire.read(); // Чтение одного байта
+    Serial.println(data); // Вывод прочитанного байта в монитор порта
+  }
+
+  delay(1000); // Задержка между итерациями
+}
